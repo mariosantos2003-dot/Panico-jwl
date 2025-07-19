@@ -1,0 +1,205 @@
+.about-title{
+    font-family: "magneto", sans-serif;
+    text-align: center;
+    font-size: clamp(3rem, 8vw, 6rem); /* Responsive font size */
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add depth */
+}
+
+.about-header{
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 12rem;
+    position: relative;
+}
+
+/* Add overlay for better text readability */
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.about-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+    padding-left: clamp(2rem, 8vw, 8rem); /* Responsive padding */
+    padding-right: clamp(2rem, 8vw, 8rem);
+    max-width: 1400px;
+    margin: 0 auto; /* Center container */
+}
+
+.about-first-section{
+    margin-top: clamp(200px, 30vw, 470px);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.first-image{
+    width: 50%;
+    height: 70vh;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.first-image:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.about-text-first-section{
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    text-align: left; /* Better readability */
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    line-height: 1.6; /* Better readability */
+    background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-image-carousel{
+    width: clamp(300px, 50vw, 450px);
+    height: clamp(300px, 50vw, 450px);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: clamp(100px, 15vw, 180px);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.about-second-section, .about-third-section{
+    display: flex;
+    margin-top: clamp(100px, 15vw, 200px);
+    padding: 0 clamp(2rem, 8vw, 8rem);
+    gap: 3rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Alternate layout for third section */
+.about-third-section {
+    flex-direction: row-reverse;
+    animation-delay: 0.4s;
+}
+
+.about-text-second-section, .about-text-third-section{
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    text-align: left;
+    margin-top: 0; /* Remove top margin */
+    padding: 2rem;
+    width: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.second-image, .third-image{
+    width: 50%; /* Consistent width */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.second-image:hover, .third-image:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-first-section, 
+    .about-second-section, 
+    .about-third-section {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .about-third-section {
+        flex-direction: column; /* Override row-reverse on mobile */
+    }
+    
+    .first-image, 
+    .second-image, 
+    .third-image,
+    .about-text-first-section,
+    .about-text-second-section,
+    .about-text-third-section {
+        width: 100%;
+    }
+    
+    .first-image {
+        height: 50vh;
+    }
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add a subtle pattern overlay */
+.about-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about-section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'magneto', sans-serif;
+    font-weight: bold;
+}
