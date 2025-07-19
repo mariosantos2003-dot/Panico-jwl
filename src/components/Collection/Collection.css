@@ -1,0 +1,109 @@
+.collection-list {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
+  background-color: var(--color-background);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+  margin-bottom: 400px;
+  row-gap: 10rem;
+  justify-items: center;
+  list-style: none;
+}
+
+.collection-title{
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  font-family:"magneto";
+  margin-top: 80px;
+  font-weight: bold;
+  justify-content: center;
+
+}
+
+.collection-subtitle{
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin-bottom: 1rem; /* Espacio entre imagen y texto */
+}
+
+.collection-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 0.5rem;
+}
+
+/* Imagen principal visible por defecto */
+.collection-image.primary {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Imagen secundaria oculta por defecto */
+.collection-image.secondary {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Al hacer hover en el contenedor, mostramos la secundaria */
+.image-container:hover .collection-image.secondary {
+  opacity: 1;
+}
+
+/* Y ocultamos la principal */
+.image-container:hover .collection-image.primary {
+  opacity: 0;
+}
+
+.collection-item {
+}
+
+.collection-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.collection-item a:hover {
+  text-decoration: none;
+}
+
+.collection-item a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.collection-name {
+  font-size:1.5rem;
+  color: white;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 80%;
+  text-decoration: none;
+}
+

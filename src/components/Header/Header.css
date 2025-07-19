@@ -1,0 +1,88 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0; /* Cambiar a 0 para sticky */
+  transform: none; /* Eliminar transform para sticky */
+  width: 100%; /* Usar 100% para sticky */
+  height: 60px;
+  background: transparent;
+  display: flex;
+  justify-content: center; /* Centrar el contenido */
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 100;
+  color: white;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; /* El contenido ocupa 80% del ancho */
+  max-width: 1200px;
+
+  /* Límite máximo de ancho */
+}
+
+.nav-section {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "plank";
+  font-size: x-large; /* Usar la fuente personalizada */
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover {
+  color: #cccccc;
+  text-decoration: none; /* Quitar subrayado en hover también */
+}
+
+
+
+.logo-section {
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 256px; /* Mantengo el tamaño original */
+  height: 256px; /* Mantengo el tamaño original */
+  object-fit: contain;
+  margin-top: 60px;
+  /* Mantengo el margen superior */
+}
+
+@font-face {
+  font-family: "gothic";
+  src: url(../../assets/fonts/Gothic.otf);
+}
+
+@font-face {
+  font-family: "plank";
+  src: url(../../assets/fonts/PLANK___.TTF);
+}
+
+@font-face {
+  font-family: "yuruka";
+  src: url(../../assets/fonts/fot-yuruka-std.ttf);
+}
+
+@font-face{
+  font-family:  "magneto";
+  src: url(../../assets/fonts/MAGNETOB.TTF);
+}
