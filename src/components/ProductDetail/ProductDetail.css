@@ -102,64 +102,175 @@
     justify-content: center;
 }
 
-/* Responsive design */
+/* Media Queries para Responsive Design */
+
+/* Tablets grandes y pantallas medianas (hasta 1024px) */
 @media (max-width: 1024px) {
     .product-detail {
         gap: 4rem;
         padding: 3rem 5%;
+        margin-top: 60px;
+    }
+    
+    .product-image-container img {
+        max-width: 400px;
     }
     
     .product-title {
         font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        max-width: 90%;
     }
     
     .product-price {
         font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .view-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
     }
 }
 
+/* Tablets y pantallas pequeñas (hasta 768px) */
 @media (max-width: 768px) {
     .product-detail {
         flex-direction: column;
         gap: 3rem;
         padding: 2rem 5%;
-        margin-top: 60px;
+        margin-top: 50px;
+        align-items: center;
     }
     
     .product-image-container,
     .product-info {
         max-width: 100%;
+        text-align: center;
+    }
+    
+    .product-image-container {
+        order: 1;
+    }
+    
+    .product-info {
+        order: 2;
+    }
+    
+    .product-image-container img {
+        max-width: 350px;
     }
     
     .product-title {
         font-size: 2rem;
-    }
-    
-    .product-description {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-    
-    .product-price {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .product-detail {
-        padding: 2rem;
-        gap: 2rem;
-    }
-    
-    .product-title {
-        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
     }
     
     .product-description {
         font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+    
+    .product-price {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .view-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles grandes (hasta 480px) */
+@media (max-width: 480px) {
+    .product-detail {
+        padding: 1.5rem 4%;
+        gap: 2rem;
+        margin-top: 40px;
+    }
+    
+    .product-image-container img {
+        max-width: 300px;
+    }
+    
+    .product-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .product-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
     }
     
     .product-price {
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .view-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Móviles pequeños (hasta 320px) */
+@media (max-width: 320px) {
+    .product-detail {
+        padding: 1rem 3%;
+        gap: 1.5rem;
+        margin-top: 30px;
+    }
+    
+    .product-image-container img {
+        max-width: 250px;
+    }
+    
+    .product-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.1;
+    }
+    
+    .product-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .product-price {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .view-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.3px;
+        border-radius: 0.8rem;
+    }
+}
+
+/* Ajustes para el overlay en móviles */
+@media (max-width: 768px) {
+    .model-overlay {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .model-overlay {
+        padding: 0.5rem;
     }
 }

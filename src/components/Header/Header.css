@@ -1,13 +1,13 @@
 .header {
   position: sticky;
   top: 0;
-  left: 0; /* Cambiar a 0 para sticky */
-  transform: none; /* Eliminar transform para sticky */
-  width: 100%; /* Usar 100% para sticky */
+  left: 0;
+  transform: none;
+  width: 100%;
   height: 60px;
   background: transparent;
   display: flex;
-  justify-content: center; /* Centrar el contenido */
+  justify-content: center;
   align-items: center;
   padding: 0 1rem;
   z-index: 100;
@@ -20,10 +20,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%; /* El contenido ocupa 80% del ancho */
+  width: 80%;
   max-width: 1200px;
-
-  /* Límite máximo de ancho */
 }
 
 .nav-section {
@@ -35,36 +33,28 @@
   cursor: pointer;
   color: white;
   transition: color 0.3s ease;
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
   font-family: "plank";
-  font-size: x-large; /* Usar la fuente personalizada */
+  font-size: x-large;
   margin-top: 40px;
   margin-bottom: 20px;
   text-decoration: none;
-  color: white;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
   color: #cccccc;
-  text-decoration: none; /* Quitar subrayado en hover también */
+  text-decoration: none;
 }
-
-
 
 .logo-section {
   flex-shrink: 0;
 }
 
 .logo {
-  width: 256px; /* Mantengo el tamaño original */
-  height: 256px; /* Mantengo el tamaño original */
+  width: 256px;
+  height: 256px;
   object-fit: contain;
   margin-top: 60px;
-  /* Mantengo el margen superior */
 }
 
 @font-face {
@@ -85,4 +75,157 @@
 @font-face{
   font-family:  "magneto";
   src: url(../../assets/fonts/MAGNETOB.TTF);
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablets grandes y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    height: 55px;
+    padding: 0 0.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .header-content {
+    width: 85%;
+  }
+  
+  .nav-section {
+    gap: 3rem;
+  }
+  
+  .nav-link {
+    font-size: large;
+    margin-top: 35px;
+    margin-bottom: 18px;
+  }
+  
+  .logo {
+    width: 220px;
+    height: 220px;
+    margin-top: 50px;
+  }
+}
+
+/* Tablets y pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 50px;
+    padding: 0 0.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .header-content {
+    width: 95%;
+    /* Mantenemos flex-direction: row para una sola fila */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-section {
+    gap: 1.5rem;
+    /* Removemos order para mantener navegación a la derecha */
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .logo-section {
+    /* Removemos order para mantener logo a la izquierda */
+  }
+  
+  .logo {
+    width: 140px;
+    height: 140px;
+    margin-top: 15px;
+  }
+}
+
+/* Móviles grandes (hasta 480px) */
+@media (max-width: 480px) {
+  .header {
+    height: 45px;
+    padding: 0 0.4rem;
+    margin-bottom: 8px;
+  }
+  
+  .header-content {
+    width: 98%;
+    justify-content: space-between;
+  }
+  
+  .nav-section {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-top: 12px;
+  }
+}
+
+/* Móviles pequeños (hasta 320px) */
+@media (max-width: 320px) {
+  .header {
+    height: 40px;
+    padding: 0 0.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .header-content {
+    width: 99%;
+    justify-content: space-between;
+  }
+  
+  .nav-section {
+    gap: 0.6rem;
+    /* Removemos flex-wrap para mantener todo en una fila */
+  }
+  
+  .nav-link {
+    font-size: 0.65rem;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 8px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 280px) {
+  .header {
+    padding: 0 0.1rem;
+  }
+  
+  .nav-section {
+    gap: 0.4rem;
+  }
+  
+  .nav-link {
+    font-size: 0.6rem;
+    margin-top: 4px;
+    margin-bottom: 3px;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 6px;
+  }
 }
