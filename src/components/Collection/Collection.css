@@ -1,7 +1,7 @@
 .collection-list {
   display: grid;
   gap: 1px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   padding: 1rem;
   background-color: var(--color-background);
   border-radius: 0.5rem;
