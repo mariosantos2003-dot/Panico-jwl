@@ -46,7 +46,7 @@ function Collection() {
   return (
     <div className="collection-container">
       <BlurText
-        text="Colección"
+        text="Joyas"
         delay={150}
         animateBy="words"
         direction="top"
