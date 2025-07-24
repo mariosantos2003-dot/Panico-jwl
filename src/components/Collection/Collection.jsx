@@ -46,21 +46,14 @@ function Collection() {
   return (
     <div className="collection-container">
       <BlurText
-        text="Collection"
+        text="Colección"
         delay={150}
         animateBy="words"
         direction="top"
         onAnimationComplete={handleAnimationComplete}
         className="collection-title"
       />
-      <BlurText
-        text="Discover What We Make"
-        delay={150}
-        animateBy="words"
-        direction="top"
-        onAnimationComplete={handleAnimationComplete}
-        className="collection-subtitle"
-      />
+
 
       <ul className="collection-list">
         {products.map((product) => (
@@ -80,7 +73,7 @@ function Collection() {
                   className="collection-image secondary"
                 />
               </div>
-           
+
               <BlurText
                 text={product.nombre}
                 delay={100}
