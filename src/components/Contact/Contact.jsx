@@ -1,9 +1,22 @@
 import React from "react";
 import "./Contact.css";
+import Beams from "../React-Bits/Beams/Beams";
 
 function Contact() {
   return (
     <div className="contact-section">
+      <div className="beams-background">
+        <Beams
+          beamWidth={20}
+          beamHeight={12}
+          beamNumber={1}
+          lightColor="#ffffff"
+          speed={1}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
+      </div>
       <div className="contact-image-container">
         <img src="/assets/contact.webp" alt="Contact" className="contact-img" />
       </div>

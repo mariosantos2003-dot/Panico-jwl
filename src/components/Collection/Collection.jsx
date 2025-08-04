@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import BlurText from "../React-Bits/Blur-Text/Blur-Text";
+import Beams from "../React-Bits/Beams/Beams";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,47 +46,60 @@ function Collection() {
 
   return (
     <div className="collection-container">
-      <BlurText
-        text="Joyas"
-        delay={150}
-        animateBy="words"
-        direction="top"
-        onAnimationComplete={handleAnimationComplete}
-        className="collection-title"
-      />
+      <div className="beams-background">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
+      </div>
+      <div className="collection-content">
+        <BlurText
+          text="Joyas"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="collection-title"
+        />
 
+        <ul className="collection-list">
+          {products.map((product) => (
+            <li key={product.id} className="collection-item">
+              <Link to={`/collection/${product.id}`}>
+                <div className="image-container">
+                  <img
+                    loading="lazy"
+                    src={product.img}
+                    alt={product.nombre}
+                    className="collection-image primary"
+                  />
+                  <img
+                    loading="lazy"
+                    src={product.img2}
+                    alt={`${product.nombre} hover`}
+                    className="collection-image secondary"
+                  />
+                </div>
 
-      <ul className="collection-list">
-        {products.map((product) => (
-          <li key={product.id} className="collection-item">
-            <Link to={`/collection/${product.id}`}>
-              <div className="image-container">
-                <img
-                  loading="lazy"
-                  src={product.img}
-                  alt={product.nombre}
-                  className="collection-image primary"
+                <BlurText
+                  text={product.nombre}
+                  delay={100}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="collection-name"
                 />
-                <img
-                  loading="lazy"
-                  src={product.img2}
-                  alt={`${product.nombre} hover`}
-                  className="collection-image secondary"
-                />
-              </div>
-
-              <BlurText
-                text={product.nombre}
-                delay={100}
-                animateBy="words"
-                direction="top"
-                onAnimationComplete={handleAnimationComplete}
-                className="collection-name"
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
