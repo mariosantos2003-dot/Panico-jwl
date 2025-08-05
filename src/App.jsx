@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import GuiaTallas from "./components/Guia-Tallas/Guia-tallas";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Footer from "./components/Footer/Footer";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/collection/:id" element={<PageWrapper><ProductDetail /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/guia-tallas" element={<PageWrapper><GuiaTallas/></PageWrapper>} />
       </Routes>
 
       <Footer />

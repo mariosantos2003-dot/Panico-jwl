@@ -229,3 +229,72 @@
     margin-top: 6px;
   }
 }
+
+/* Hacer los dropdowns visibles solo en hover */
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+/* Mostrar dropdown en hover */
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown horizontal para Colección */
+.dropdown.horizontal {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  min-width: 300px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.nav-item:hover .dropdown.horizontal {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Separadores para el dropdown horizontal */
+.dropdown.horizontal .dropdown-link:not(:last-child)::after {
+  content: '|';
+  margin-left: 1rem;
+  color: #ccc;
+}
+
+/* Estilos para los enlaces del dropdown */
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.dropdown-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* Para el dropdown horizontal, quitar el padding vertical del hover */
+.dropdown.horizontal .dropdown-link:hover {
+  background-color: transparent;
+  color: #007bff;
+}

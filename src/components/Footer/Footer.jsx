@@ -7,7 +7,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-top">
-          <h1 className="footer-title">Panico Jwl</h1>
+          <h1 className="footer-title">panico jwl</h1>
           <p className="footer-description">
             
           </p>
