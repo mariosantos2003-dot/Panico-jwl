@@ -135,10 +135,7 @@
     margin-bottom: 8px;
   }
   
-  .logo-section {
-    /* Removemos order para mantener logo a la izquierda */
-  }
-  
+
   .logo {
     width: 140px;
     height: 140px;
@@ -239,7 +236,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background: black;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 0.5rem 0;
@@ -266,6 +263,7 @@
   min-width: 300px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
+  background-color: black;
 }
 
 .nav-item:hover .dropdown.horizontal {
@@ -283,10 +281,14 @@
 .dropdown-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #333;
+  color: white;
   text-decoration: none;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  justify-content: center;
+ text-align: center;
+  font-family: "plank";
+  font-size: medium;
 }
 
 .dropdown-link:hover {
@@ -296,5 +298,5 @@
 /* Para el dropdown horizontal, quitar el padding vertical del hover */
 .dropdown.horizontal .dropdown-link:hover {
   background-color: transparent;
-  color: #007bff;
+  color: #73787d;
 }

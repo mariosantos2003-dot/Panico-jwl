@@ -12,7 +12,7 @@ function Header() {
           <div className='nav-item'>
             <Link to="/" className='nav-link'>Inicio</Link>
             <div className='dropdown'>
-              <Link to="/guia-tallas" className='dropdown-link'>Guía de tallas</Link>
+              <Link to="/guia-tallas" className='dropdown-link'>Guia de tallas</Link>
             </div>
           </div>
 

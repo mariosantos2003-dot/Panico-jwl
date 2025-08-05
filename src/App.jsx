@@ -25,7 +25,7 @@ function App() {
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/guia-tallas" element={<PageWrapper><GuiaTallas/></PageWrapper>} />
       </Routes>
-
+      <Collection />
       <Footer />
 
     </Router>
