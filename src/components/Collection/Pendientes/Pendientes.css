@@ -1,0 +1,109 @@
+.pendientes-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .beams-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  
+  .pendientes-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .pendientes-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 200px;
+    margin-bottom: 400px;
+    justify-items: center;
+    list-style: none;
+    backdrop-filter: blur(10px);
+  }
+  
+  .pendientes-title {
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    font-family: "magneto";
+    margin-top: 80px;
+    font-weight: bold;
+    justify-content: center;
+  }
+  
+  .pendientes-subtitle {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 1rem;
+  }
+  
+  .pendientes-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 0.5rem;
+  }
+  
+  .pendientes-image.primary {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .pendientes-image.secondary {
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .image-container:hover .pendientes-image.secondary {
+    opacity: 1;
+  }
+  
+  .image-container:hover .pendientes-image.primary {
+    opacity: 0;
+  }
+  
+  .pendientes-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pendientes-item h3 {
+    margin-top: 1rem;
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.2rem;
+  }
+  

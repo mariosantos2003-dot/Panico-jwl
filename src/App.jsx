@@ -10,6 +10,9 @@ import GuiaTallas from "./components/Guia-Tallas/Guia-tallas";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Footer from "./components/Footer/Footer";
+import Anillos from "./components/Collection/Anillos/Anillos";
+import Colgantes from "./components/Collection/Colgantes/Colgantes";
+import Pendientes from "./components/Collection/Pendientes/Pendientes";
 
 function App() {
   return (
@@ -21,11 +24,15 @@ function App() {
         <Route path="/" element={<PageWrapper><Logo /></PageWrapper>} />
         <Route path="/collection" element={<PageWrapper><Collection /></PageWrapper>} />
         <Route path="/collection/:id" element={<PageWrapper><ProductDetail /></PageWrapper>} />
+        <Route path="/collection/anillos" element={<PageWrapper><Anillos/></PageWrapper>} />
+        <Route path="/collection/colgantes" element={<PageWrapper><Colgantes/></PageWrapper>} />
+        <Route path="/collection/pendientes" element={<PageWrapper><Pendientes/></PageWrapper>} />
+
+
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/guia-tallas" element={<PageWrapper><GuiaTallas/></PageWrapper>} />
       </Routes>
-      <Collection />
       <Footer />
 
     </Router>
