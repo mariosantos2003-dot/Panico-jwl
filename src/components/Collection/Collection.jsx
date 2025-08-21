@@ -46,7 +46,7 @@ function Collection() {
 
   return (
     <div className="collection-container">
-  
+
       <div className="collection-content">
         <BlurText
           text="Joyas"
@@ -56,6 +56,26 @@ function Collection() {
           onAnimationComplete={handleAnimationComplete}
           className="collection-title"
         />
+        <div>
+          <h2 className="collection-filter">
+            Filter
+          </h2>
+
+          <div>
+            <button>
+              3
+            </button>
+            <button>
+              4
+            </button>
+            <button>
+              2
+            </button>
+
+          </div>
+
+        </div>
+
 
         <ul className="collection-list">
           {products.map((product) => (
