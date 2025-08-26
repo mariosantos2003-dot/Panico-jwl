@@ -274,3 +274,120 @@
         padding: 0.5rem;
     }
 }
+
+/* Estilos para la sección de contacto */
+.product-contact {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.product-contact h2 {
+    color: white;
+    font-family: "magneto", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-contact p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.instagram-option {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.instruction-text {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: "Arial", sans-serif;
+}
+
+.contact-button:hover {
+    background: white;
+    color: #0a0a0a;
+    transform: translateY(-2px);
+}
+
+.contact-button.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: white;
+}
+
+.contact-button.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: #bc1888;
+    color: white;
+}
+
+.contact-button.instagram-profile:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    border-color: #833ab4;
+    color: white;
+}
+
+.contact-button.copy-message:hover {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive para botones de contacto */
+@media (max-width: 768px) {
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .contact-button {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .product-contact {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .product-contact h2 {
+        font-size: 1.6rem;
+    }
+    
+    .product-contact p {
+        font-size: 1rem;
+    }
+}
