@@ -43,10 +43,7 @@ export default function Colgantes() {
     <div className="colgantes-container">
       <div className="colgantes-content">
         <h1 className="colgantes-title">Colgantes</h1>
-        <h2 className="colgantes-subtitle">
-          Joyas que susurran historias, diseñadas para adornar tu cuello con
-          elegancia y significado.
-        </h2>
+ 
         <ul className="colgantes-list">
           {colgantes.map((product) => (
             <li key={product.id} className="colgantes-item">

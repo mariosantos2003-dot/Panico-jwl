@@ -41,10 +41,7 @@ export default function Anillos() {
     <div className="anillos-container">
       <div className="anillos-content">
         <h1 className="anillos-title">Anillos</h1>
-        <h2 className="anillos-subtitle">
-          Hechos a mano con materiales de alta calidad, nuestros anillos son el
-          complemento perfecto para cualquier ocasión.
-        </h2>
+  
         <ul className="anillos-list">
           {anillos.map((product) => (
             <li key={product.id} className="anillos-item">

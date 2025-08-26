@@ -43,10 +43,7 @@ export default function Pendientes() {
     <div className="pendientes-container">
       <div className="pendientes-content">
         <h1 className="pendientes-title">Pendientes</h1>
-        <h2 className="pendientes-subtitle">
-          Diseños que capturan la luz y enmarcan tu rostro, creados para realzar
-          tu belleza con un toque de distinción.
-        </h2>
+    
         <ul className="pendientes-list">
           {pendientes.map((product) => (
             <li key={product.id} className="pendientes-item">

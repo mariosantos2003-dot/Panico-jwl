@@ -21,7 +21,12 @@ function App() {
 
 
       <Routes>
-        <Route path="/" element={<PageWrapper><Logo /></PageWrapper>} />
+        <Route path="/" element={
+          <PageWrapper>
+            <Logo />
+            <Collection />
+          </PageWrapper>
+        } />
         <Route path="/collection" element={<PageWrapper><Collection /></PageWrapper>} />
         <Route path="/collection/:id" element={<PageWrapper><ProductDetail /></PageWrapper>} />
         <Route path="/collection/anillos" element={<PageWrapper><Anillos/></PageWrapper>} />

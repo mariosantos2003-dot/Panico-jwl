@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment } from "@react-three/drei";
 import { Suspense, useMemo, useState, useEffect } from "react";
 import Dither from "../React-Bits/Dither/Dither";
-import Collection from "../Collection/Collection";
 
 function LogoModel({ scale, position }) {
   const gltf = useGLTF("/assets/Final-Logo.glb");
@@ -205,7 +204,6 @@ export default function Logo3D() {
         </Suspense>
       </Canvas>
 
-      
     </div>
   );
 }
