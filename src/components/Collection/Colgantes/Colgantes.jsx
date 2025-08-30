@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Colgantes() {
   useEffect(() => {
-    const items = gsap.utils.toArray(".colgantes-item");
+    const items = gsap.utils.toArray(".colgantes-section");
 
     items.forEach((item) => {
       gsap.fromTo(
@@ -41,31 +41,67 @@ export default function Colgantes() {
 
   return (
     <div className="colgantes-container">
-      <div className="colgantes-content">
+     
+      <div className="colgantes-header">
         <h1 className="colgantes-title">Colgantes</h1>
- 
-        <ul className="colgantes-list">
-          {colgantes.map((product) => (
-            <li key={product.id} className="colgantes-item">
-              <Link to={`/product/${product.id}`}>
-                <div className="image-container">
-                  <img
-                    src={product.img}
-                    alt={product.nombre}
-                    className="colgantes-image primary"
-                  />
-                  <img
-                    src={product.img2}
-                    alt={product.nombre}
-                    className="colgantes-image secondary"
-                  />
-                </div>
-                <h3>{product.nombre}</h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
+
+      {colgantes.map((product, index) => {
+        const isEven = index % 2 === 0;
+        const isCarousel = (index + 1) % 3 === 0;
+        
+        if (isCarousel && index < colgantes.length - 1) {
+          // Cada tercer producto, crear un carousel con 3 productos
+          const carouselProducts = colgantes.slice(index, index + 3);
+          return (
+            <div key={`carousel-${index}`} className="colgantes-carousel">
+              {carouselProducts.map((carouselProduct) => (
+                <Link 
+                  key={carouselProduct.id} 
+                  to={`/collection/${carouselProduct.id}`}
+                  className="carousel-item"
+                >
+                  <img 
+                    src={carouselProduct.img} 
+                    alt={carouselProduct.nombre}
+                    className="carousel-image"
+                  />
+                  <h3 className="carousel-title">{carouselProduct.nombre}</h3>
+                </Link>
+              ))}
+            </div>
+          );
+        }
+
+        if (!isCarousel) {
+          return (
+            <div 
+              key={product.id} 
+              className={`colgantes-section ${isEven ? 'section-left' : 'section-right'}`}
+            >
+              <Link to={`/collection/${product.id}`} className="product-image-link">
+                <img 
+                  src={product.img} 
+                  alt={product.nombre}
+                  className="section-image"
+                />
+              </Link>
+              <div className="product-info-section">
+                <h2 className="product-section-title">{product.nombre}</h2>
+                <p className="product-description">{product.descripcion}</p>
+                <Link 
+                  to={`/collection/${product.id}`}
+                  className="view-product-btn"
+                >
+                  Ver Producto
+                </Link>
+              </div>
+            </div>
+          );
+        }
+
+        return null;
+      })}
     </div>
   );
 }

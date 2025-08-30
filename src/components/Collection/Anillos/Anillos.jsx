@@ -4,17 +4,16 @@ import "./Anillos.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import Beams from "../../React-Bits/Beams/Beams";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Anillos() {
   useEffect(() => {
-    const items = gsap.utils.toArray(".anillos-item");
+    const sections = gsap.utils.toArray(".anillos-section");
 
-    items.forEach((item) => {
+    sections.forEach((section) => {
       gsap.fromTo(
-        item,
+        section,
         {
           opacity: 0,
           y: 50,
@@ -25,8 +24,8 @@ export default function Anillos() {
           duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: item,
-            start: "top 90%",
+            trigger: section,
+            start: "top 85%",
             toggleActions: "play none none none",
             once: true,
           },
@@ -39,31 +38,38 @@ export default function Anillos() {
 
   return (
     <div className="anillos-container">
-      <div className="anillos-content">
+      <div className="anillos-header">
         <h1 className="anillos-title">Anillos</h1>
-  
-        <ul className="anillos-list">
-          {anillos.map((product) => (
-            <li key={product.id} className="anillos-item">
-              <Link to={`/product/${product.id}`}>
-                <div className="image-container">
-                  <img
-                    src={product.img}
-                    alt={product.nombre}
-                    className="anillos-image primary"
-                  />
-                  <img
-                    src={product.img2}
-                    alt={product.nombre}
-                    className="anillos-image secondary"
-                  />
-                </div>
-                <h3>{product.nombre}</h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
+
+      {anillos.map((product, index) => {
+        const isEven = index % 2 === 0;
+        
+        return (
+          <div 
+            key={product.id} 
+            className={`anillos-section ${isEven ? 'section-left' : 'section-right'}`}
+          >
+            <Link to={`/collection/${product.id}`} className="product-image-link">
+              <img 
+                src={product.img} 
+                alt={product.nombre}
+                className="section-image"
+              />
+            </Link>
+            <div className="product-info-section">
+              <h2 className="product-section-title">{product.nombre}</h2>
+              <p className="product-description">{product.descripcion}</p>
+              <Link 
+                to={`/collection/${product.id}`}
+                className="view-product-btn"
+              >
+                Ver Producto
+              </Link>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
