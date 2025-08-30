@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../../utils/products";
 import "./ProductDetail.css";
-import ModelViewer from "../ModelViewer/ModelViewer";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -17,8 +16,6 @@ function ProductDetail() {
   const igProfileLink = `https://www.instagram.com/${username}/`;
   const igAppLink = `instagram://user?username=${username}`;
   
-  const [showModel, setShowModel] = useState(false);
-
   // Función para manejar el clic de Instagram
   const handleInstagramClick = () => {
     // Primero intenta abrir la app de Instagram
@@ -43,53 +40,33 @@ function ProductDetail() {
     <div className="product-detail">
       <div className="product-image-container">
         <img src={product.img} alt={product.nombre} />
-        <button
-          className="view-button"
-          onClick={() => setShowModel(!showModel)}
-        >
-          {showModel ? "Ocultar 3D" : "Ver en 3D"}
-        </button>
-        {showModel && <ModelViewer modelPath={product.model} onClose={() => setShowModel(false)} />}
       </div>
 
       <div className="product-info">
         <h1 className="product-title">{product.nombre}</h1>
-        <p className="product-description">{product.descripcion}</p>
-      </div>
 
-      <div className="product-contact">
-        <h2>Contacto</h2>
-        <p>
-          Si estás interesado en este producto, contáctanos:
-        </p>
-        <div className="contact-buttons">
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="contact-button whatsapp">
-            WhatsApp
-          </a>
-          <div className="instagram-option">
-            <h1>
-              Opcion 2
-            </h1>
-            <button 
-              className="contact-button copy-message"
-              onClick={() => {
-                navigator.clipboard.writeText(message);
-                alert('¡Mensaje copiado! Ahora haz clic en Instagram DM para pegarlo.');
-              }}
-            >
-            Copiar mensaje
-            </button>
-            <button 
-              onClick={handleInstagramClick}
-              className="contact-button instagram"
-            >
-              Envianos un Mensaje por Instagram
-            </button>
+        <div className="description-box">
+          <p className="product-description">{product.descripcion}</p>
+
+          <div className="product-meta">
+            <div className="meta-row">
+              <span className="meta-label">Precio:</span>
+              <span className="meta-value">{product.precio ? `€ ${product.precio}` : 'Consultar'}</span>
+            </div>
+          </div>
+
+          <div className="product-contact">
+            <h3>¿Te interesa esta pieza?</h3>
+            <p>Contáctanos para más información o para realizar tu pedido</p>
+            <div className="contact-buttons">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="contact-button whatsapp">
+                💬 Contactar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
-     
       </div>
-    </div>
+  </div>
   );
 }
 
