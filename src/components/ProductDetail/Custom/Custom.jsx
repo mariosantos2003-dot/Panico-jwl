@@ -123,23 +123,22 @@ function Custom() {
     e.preventDefault();
     
     // Crear el mensaje para WhatsApp
-    const message = `🌟 *SOLICITUD DE JOYA PERSONALIZADA* 🌟
+    const message = `🌟SOLICITUD DE JOYA PERSONALIZADA🌟
 
-📝 *Detalles de la joya:*
+📝 Detalles de la joya:
 
-💎 *Nombre:* ${formData.nombre}
-📋 *Descripción:* ${formData.descripcion}
-🏷️ *Categoría:* ${formData.categoria}
-📏 *Talla:* ${formData.talla}
-⚡ *Material:* ${formData.material}
-💰 *Precio estimado:* ${formData.precio}€
-💬 *Observaciones adicionales:* ${formData.observaciones}
+💎 Nombre: ${formData.nombre}
+📋 Descripción: ${formData.descripcion}
+🏷️ Categoría: ${formData.categoria}
+📏 Talla: ${formData.talla}
+⚡ Material: ${formData.material}
+💰 Precio estimado: ${formData.precio}€
+💬 Observaciones adicionales: ${formData.observaciones}
 
 ¡Espero tu respuesta para comenzar a crear esta pieza única! ✨`;
 
     // Número de WhatsApp (reemplaza con el número real)
-    const phoneNumber = "34666123456"; // Cambia este número por el tuyo real
-    
+    const phoneNumber = "34633130711"; // 
     // Codificar el mensaje para URL
     const encodedMessage = encodeURIComponent(message);
     
