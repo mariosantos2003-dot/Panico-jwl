@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import Custom from "./components/ProductDetail/Custom/Custom";
 import GuiaTallas from "./components/Guia-Tallas/Guia-tallas";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
@@ -29,6 +30,7 @@ function App() {
         } />
         <Route path="/collection" element={<PageWrapper><Collection /></PageWrapper>} />
         <Route path="/collection/:id" element={<PageWrapper><ProductDetail /></PageWrapper>} />
+        <Route path="/custom" element={<PageWrapper><Custom /></PageWrapper>} />
         <Route path="/collection/anillos" element={<PageWrapper><Anillos/></PageWrapper>} />
         <Route path="/collection/colgantes" element={<PageWrapper><Colgantes/></PageWrapper>} />
         <Route path="/collection/pendientes" element={<PageWrapper><Pendientes/></PageWrapper>} />

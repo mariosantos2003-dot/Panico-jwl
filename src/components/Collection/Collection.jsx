@@ -133,7 +133,7 @@ function Collection() {
         >
           {filteredProducts.map((product) => (
             <li key={product.id} className="collection-item">
-              <Link to={`/collection/${product.id}`}>
+              <Link to={product.id === 11 ? "/custom" : `/collection/${product.id}`}>
                 <div className="image-container">
                   <img
                     loading="lazy"

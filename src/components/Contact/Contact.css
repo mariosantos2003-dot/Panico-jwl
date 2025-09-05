@@ -6,14 +6,6 @@
   position: relative;
 }
 
-.beams-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
 .contact-image-container {
   flex: 1;
@@ -69,7 +61,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .contact-link {
@@ -95,9 +87,10 @@
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
+  color: #cccccc;
 }
 
 /* Media Queries para Responsive Design */

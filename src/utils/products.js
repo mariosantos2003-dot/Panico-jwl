@@ -99,5 +99,16 @@ export const products = [
         "descripcion": "Anillo en plata de ley con un hermoso cuarzo citrino, ideal para ocasiones especiales o uso diario. Hecho a mano con atención al detalle y calidad excepcional.",
         "model": "/assets/Hand-Final.glb",
         "categoria": "pendientes"
+    },
+    {
+        "id": 11,
+        "nombre": "Joya Personalizada",
+        "img": "",
+        "img2": "",
+        "precio": null,
+        "descripcion": "",
+        "model": "",
+        "categoria": ""
+
     }
 ]

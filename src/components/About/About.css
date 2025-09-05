@@ -109,6 +109,7 @@
 .about-third-section {
     flex-direction: row-reverse;
     animation-delay: 0.4s;
+    width: fit-content;
 }
 
 .about-text-second-section, .about-text-third-section{
@@ -116,7 +117,7 @@
     text-align: left;
     margin-top: 0; /* Remove top margin */
     padding: 2rem;
-    width: 50%;
+    width: 60%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background: rgba(255, 255, 255, 0.05);

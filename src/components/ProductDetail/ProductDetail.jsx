@@ -7,8 +7,8 @@ function ProductDetail() {
   const { id } = useParams();
   const product = products.find((p) => p.id.toString() === id);
   const username = "panico.jwl"
-  const phoneNumber = "34123456789"; // Reemplaza con tu número de WhatsApp (con código de país sin +)
-  const message = `Hola buenas, me interesaría esta joya: ${product?.nombre || 'este producto'}`
+  const phoneNumber = "34633130711"; // Reemplaza con tu número de WhatsApp (con código de país sin +)
+  const message = `Hola buenas, me interesaría esta joya: ${product?.nombre || 'este producto' || product?.img}`
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
   // Diferentes opciones de Instagram
