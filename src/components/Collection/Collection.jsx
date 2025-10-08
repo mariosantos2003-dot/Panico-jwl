@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 import BlurText from "../React-Bits/Blur-Text/Blur-Text";
 import Beams from "../React-Bits/Beams/Beams";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Collection() {
-  const [columns, setColumns] = useState(3); // Estado para controlar el número de columnas
-  const [selectedCategory, setSelectedCategory] = useState('todos'); // Estado para el filtro de categoría
+  const [columns, setColumns] = useState(3);
+  const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
@@ -26,10 +26,28 @@ function Collection() {
     setSelectedCategory(category);
   };
 
+  // Detectar cambios de tamaño de ventana
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      // En móvil, forzar 1 columna
+      if (mobile && columns > 2) {
+        setColumns(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Ejecutar al montar
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [columns]);
+
   // Filtrar productos según la categoría seleccionada
   const filteredProducts = selectedCategory === 'todos' 
     ? products 
     : products.filter(product => product.categoria === selectedCategory);
+
   useEffect(() => {
     const items = gsap.utils.toArray(".collection-item");
 
@@ -59,11 +77,16 @@ function Collection() {
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [filteredProducts]); // Dependencia actualizada para re-ejecutar cuando cambien los productos filtrados
+  }, [filteredProducts]);
+
+  // Determinar columnas responsivas
+  const getResponsiveColumns = () => {
+    if (isMobile) return 1;
+    return columns;
+  };
 
   return (
     <div className="collection-container">
-
       <div className="collection-content">
         <BlurText
           text="Joyas"
@@ -74,26 +97,25 @@ function Collection() {
           className="collection-title"
         />
 
-
-
-        <div className="collection-display">
-          <p>Vista</p>
-          <button 
-            className={`button-display ${columns === 2 ? 'active' : ''}`}
-            onClick={() => handleViewChange(2)}
-          >
-            2
-          </button>
-          <p>|</p>
-          <button 
-            className={`button-display ${columns === 3 ? 'active' : ''}`}
-            onClick={() => handleViewChange(3)}
-          >
-            3
-          </button>
-          
-
-        </div>
+        {/* Ocultar selector de vista en móvil */}
+        {!isMobile && (
+          <div className="collection-display">
+            <p>Vista</p>
+            <button 
+              className={`button-display ${columns === 2 ? 'active' : ''}`}
+              onClick={() => handleViewChange(2)}
+            >
+              2
+            </button>
+            <p>|</p>
+            <button 
+              className={`button-display ${columns === 3 ? 'active' : ''}`}
+              onClick={() => handleViewChange(3)}
+            >
+              3
+            </button>
+          </div>
+        )}
 
         <div className="collection-filter">
           <button 
@@ -125,11 +147,9 @@ function Collection() {
           </button>
         </div>
 
-
-
         <ul 
           className="collection-list" 
-          style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+          style={{ gridTemplateColumns: `repeat(${getResponsiveColumns()}, 1fr)` }}
         >
           {filteredProducts.map((product) => (
             <li key={product.id} className="collection-item">

@@ -3,6 +3,7 @@
   width: 100%;
   min-height: 100vh;
   margin-top: 0;
+  padding: 2rem;
 }
 
 .beams-background {
@@ -19,6 +20,8 @@
   z-index: 1;
   width: 100%;
   min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .collection-list {
@@ -31,23 +34,23 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin-top: 50px;
   margin-bottom: 400px;
-  justify-items: center;
   list-style: none;
   backdrop-filter: blur(10px);
   transition: grid-template-columns 0.3s ease;
 }
 
-.collection-title{
-  font-size: 6rem;
+.collection-title {
+  font-size: 3rem;
   color: white;
   text-align: center;
-  font-family:"magneto";
+  font-family: "magneto";
   margin-top: 20px;
   font-weight: bold;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.collection-subtitle{
+.collection-subtitle {
   font-size: 2rem;
   color: white;
   text-align: center;
@@ -59,8 +62,11 @@
 
 .image-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
@@ -71,7 +77,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   border-radius: 0.5rem;
 }
 
@@ -93,13 +99,16 @@
   opacity: 0;
 }
 
+.collection-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 .collection-item a {
   text-decoration: none;
   color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: block;
 }
 
 .collection-item a:hover {
@@ -112,45 +121,57 @@
 }
 
 .collection-name {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: white;
   text-align: center;
   margin: 0;
   display: flex;
   justify-content: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 80%;
+  width: 100%;
   text-decoration: none;
+  margin-top: 1rem;
 }
 
-.collection-display{
+.collection-display,
+.collection-filter {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-right: 60px;
-  margin-top: 30px;
-  
-}
-.button-display:hover{
-  opacity: 80%;
-  
-}
-
-.button-display.active {
-  background-color: #333;
-  color: white;
-  opacity: 100%;
-  font-weight: bold;
-}
-
-.collection-filter{
-  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  font-size: 20px;
-  padding-top: 80px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.collection-display p,
+.collection-filter p {
+  margin: 0;
+  color: #fff;
+}
+
+.button-display,
+.collection-filter button {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.button-display:hover,
+.collection-filter button:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.button-display.active,
+.collection-filter button.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  font-weight: bold;
 }
 
 .collection-filter button {
@@ -162,14 +183,15 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.collection-filter button:hover{
-  opacity: 80%;
+
+.collection-filter button:hover {
+  opacity: 0.8;
 }
 
 .collection-filter button.active {
-  background-color: #333;
-  color: white;
-  opacity: 100%;
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
   font-weight: bold;
   border-radius: 4px;
   padding: 5px 10px;
@@ -186,116 +208,169 @@
     gap: 1.5rem;
     padding: 1.5rem;
   }
-  
+
   .collection-title {
-    font-size: 5rem;
+    font-size: 2.5rem;
     margin-top: 60px;
   }
-  
+
   .collection-subtitle {
     font-size: 1.8rem;
   }
-  
+
   .image-container {
     width: 350px;
     height: 350px;
   }
-  
+
   .collection-name {
-    font-size: 1.4rem;
+    font-size: 1rem;
+  }
+
+  .collection-list {
+    gap: 1.5rem;
   }
 }
 
 /* Tablets y pantallas pequeñas (hasta 768px) */
 @media (max-width: 768px) {
-  .collection-list {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 100px;
-    margin-bottom: 200px;
-    gap: 1rem;
+  .collection-container {
     padding: 1rem;
   }
-  
-  .collection-title {
-    font-size: 4rem;
-    margin-top: 40px;
+
+  .collection-list {
+    grid-template-columns: 1fr !important;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    gap: 1.5rem;
+    padding: 1rem;
   }
-  
+
+  .collection-title {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 1.5rem;
+  }
+
   .collection-subtitle {
     font-size: 1.6rem;
     margin-top: 15px;
     margin-bottom: 30px;
   }
-  
+
   .image-container {
     width: 280px;
     height: 280px;
   }
-  
+
   .collection-name {
-    font-size: 1.3rem;
-    width: 90%;
+    font-size: 1rem;
+  }
+
+  .collection-display {
+    display: none;
+  }
+
+  .collection-filter {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .collection-filter button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .collection-list {
+    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+  }
+
+  .collection-name {
+    font-size: 1rem;
   }
 }
 
 /* Móviles grandes (hasta 480px) */
 @media (max-width: 480px) {
+  .collection-container {
+    padding: 0.5rem;
+  }
+
   .collection-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     margin-top: 80px;
     margin-bottom: 150px;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0.8rem;
   }
-  
+
   .collection-title {
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin-top: 30px;
   }
-  
+
   .collection-subtitle {
     font-size: 1.4rem;
     margin-top: 10px;
     margin-bottom: 20px;
   }
-  
+
   .image-container {
     width: 250px;
     height: 250px;
   }
-  
+
   .collection-name {
-    font-size: 1.2rem;
-    width: 95%;
+    font-size: 0.9rem;
+  }
+
+  .collection-filter {
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .collection-filter p {
+    display: none;
+  }
+
+  .collection-filter button {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .collection-list {
+    gap: 1rem;
   }
 }
 
 /* Móviles pequeños (hasta 320px) */
 @media (max-width: 320px) {
   .collection-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     margin-top: 60px;
     margin-bottom: 100px;
     gap: 1rem;
     padding: 0.5rem;
   }
-  
+
   .collection-title {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     margin-top: 20px;
   }
-  
+
   .collection-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .image-container {
     width: 200px;
     height: 200px;
   }
-  
+
   .collection-name {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
   }
 }
 
