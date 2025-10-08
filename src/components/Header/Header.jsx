@@ -29,7 +29,7 @@ export default function Header() {
 
         <div className='logo-section'>
           <Link to='/'>
-            <img src='/assets/Pánico_Full_Render_Display.webp' alt='Rotating Logo' className='logo' />
+            <img src='/assets/spinning-icon.gif' alt='Rotating Logo' className='logo' />
           </Link>
         </div>
 

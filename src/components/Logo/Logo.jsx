@@ -161,8 +161,31 @@ export default function Logo3D() {
         />
       </div>
 
+      {/* Imagen encima del Dither */}
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <img 
+          src="/assets/Pánico_Full_Render_Display.webp" 
+          alt="Foto"
+          style={{
+            maxWidth: "50%",
+            maxHeight: "50%",
+            objectFit: "contain"
+          }}
+        />
+      </div>
+
       {/* Canvas con el logo encima */}
-      <Canvas
+      {/*<Canvas
         dpr={config.pixelRatio}
         performance={{ 
           min: isSmallMobile ? 0.3 : isMobile ? 0.4 : 0.5,
@@ -188,6 +211,7 @@ export default function Logo3D() {
           powerPreference: isMobile ? "low-power" : "high-performance"
         }}
       >
+     
         <Suspense fallback={null}>
           <ambientLight intensity={config.ambientIntensity} />
           <directionalLight 
@@ -203,6 +227,7 @@ export default function Logo3D() {
           <OrbitControls {...controlsConfig} />
         </Suspense>
       </Canvas>
+       */}
 
     </div>
   );
