@@ -4,7 +4,7 @@ import { Suspense, useMemo, useState, useEffect } from "react";
 import Dither from "../React-Bits/Dither/Dither";
 
 function LogoModel({ scale, position }) {
-  const gltf = useGLTF("/assets/Final-Logo.glb");
+  const gltf = useGLTF("/assets/icon.glb");
   const scene = useMemo(() => gltf.scene.clone(), [gltf.scene]);
   return <primitive object={scene} scale={scale} position={position} />;
 }
