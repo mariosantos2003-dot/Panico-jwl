@@ -246,6 +246,12 @@
     padding: 1rem;
   }
 
+  .collection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .collection-title {
     font-size: 2rem;
     margin-top: 40px;
@@ -305,6 +311,12 @@
     padding: 0.8rem;
   }
 
+  .collection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .collection-title {
     font-size: 1.5rem;
     margin-top: 30px;
@@ -353,6 +365,12 @@
     margin-bottom: 100px;
     gap: 1rem;
     padding: 0.5rem;
+  }
+
+  .collection-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .collection-title {
