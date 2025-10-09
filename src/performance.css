@@ -1,0 +1,130 @@
+/* Optimizaciones globales de rendimiento */
+
+/* Reducir animaciones en dispositivos con prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimizar will-change solo cuando sea necesario */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Optimizar compositing layers */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimizar texto */
+.optimize-text {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor de canvas optimizado */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  contain: layout style paint; /* CSS containment para mejor rendimiento */
+}
+
+/* Optimizaciones para mobile */
+@media (max-width: 768px) {
+  /* Reducir complejidad de sombras */
+  .shadow {
+    box-shadow: none !important;
+  }
+  
+  /* Simplificar gradientes */
+  .gradient {
+    background: solid !important;
+  }
+  
+  /* Evitar transform 3D en mobile si no es necesario */
+  .no-transform-mobile {
+    transform: none !important;
+  }
+}
+
+/* Optimizar scroll performance */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Lazy loading de imágenes */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Prevenir layout shifts */
+.aspect-ratio-box {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+.aspect-ratio-box-1-1 {
+  padding-bottom: 100%;
+}
+
+.aspect-ratio-box-16-9 {
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio-box-4-3 {
+  padding-bottom: 75%;
+}
+
+.aspect-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Optimizar fuentes - aplicar font-display: swap en todas las @font-face */
+/* Este comentario sirve como recordatorio para añadir font-display: swap 
+   a todas las declaraciones @font-face en el proyecto */
+
+/* Contenedor de animación optimizado */
+.animation-container {
+  contain: layout style paint;
+  content-visibility: auto; /* Renderizar solo lo visible */
+}
+
+/* Desactivar pointer events en elementos decorativos */
+.no-pointer-events {
+  pointer-events: none;
+}
+
+/* Optimizar interacciones táctiles */
+.touch-optimized {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}

@@ -4,6 +4,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { EffectComposer, wrapEffect } from "@react-three/postprocessing";
 import { Effect } from "postprocessing";
 import * as THREE from "three";
+import { getOptimizedCanvasConfig, throttle } from "../../../utils/deviceDetection";
 
 import './Dither.css';
 
@@ -194,7 +195,7 @@ function DitheredWaves({
     }
   }, [size, gl]);
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock, invalidate }) => {
     const u = waveUniformsRef.current;
     if (!disableAnimation) u.time.value = clock.getElapsedTime();
     u.waveSpeed.value = waveSpeed;
@@ -206,16 +207,23 @@ function DitheredWaves({
     if (enableMouseInteraction) {
       u.mousePos.value.set(mousePos.x, mousePos.y);
     }
+    invalidate(); // Invalidar para frame on demand
   });
 
   const handlePointerMove = (e) => {
     if (!enableMouseInteraction) return;
-    const rect = gl.domElement.getBoundingClientRect();
-    const dpr = gl.getPixelRatio();
-    setMousePos({
-      x: (e.clientX - rect.left) * dpr,
-      y: (e.clientY - rect.top) * dpr,
-    });
+    
+    // Throttle para mejor rendimiento
+    const updateMousePos = throttle(() => {
+      const rect = gl.domElement.getBoundingClientRect();
+      const dpr = gl.getPixelRatio();
+      setMousePos({
+        x: (e.clientX - rect.left) * dpr,
+        y: (e.clientY - rect.top) * dpr,
+      });
+    }, 32); // ~30fps para mouse tracking
+    
+    updateMousePos();
   };
 
   return (
@@ -257,12 +265,16 @@ export default function Dither({
   enableMouseInteraction = true,
   mouseRadius = 1,
 }) {
+  // Usar configuración optimizada del dispositivo
+  const canvasConfig = getOptimizedCanvasConfig();
+  
   return (
     <Canvas
       className="dither-container"
       camera={{ position: [0, 0, 6] }}
-      dpr={window.devicePixelRatio}
-      gl={{ antialias: true, preserveDrawingBuffer: true }}
+      dpr={canvasConfig.dpr}
+      gl={canvasConfig.gl}
+      frameloop={disableAnimation ? 'demand' : canvasConfig.frameloop}
     >
       <DitheredWaves
         waveSpeed={waveSpeed}

@@ -13,6 +13,7 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils.js";
+import { getOptimizedCanvasConfig } from "../../../utils/deviceDetection";
 
 import "./Beams.css";
 
@@ -65,11 +66,20 @@ function extendMaterial(BaseMaterial, cfg) {
   return mat;
 }
 
-const CanvasWrapper = ({ children }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className="beams-container">
-    {children}
-  </Canvas>
-);
+const CanvasWrapper = ({ children }) => {
+  const canvasConfig = getOptimizedCanvasConfig();
+  
+  return (
+    <Canvas 
+      dpr={canvasConfig.dpr} 
+      frameloop={canvasConfig.frameloop} 
+      className="beams-container"
+      gl={canvasConfig.gl}
+    >
+      {children}
+    </Canvas>
+  );
+};
 
 const hexToNormalizedRGB = (hex) => {
   const clean = hex.replace("#", "");
@@ -307,8 +317,9 @@ const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
     () => createStackedPlanesBufferGeometry(count, width, height, 0, 100),
     [count, width, height]
   );
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     mesh.current.material.uniforms.time.value += 0.1 * delta;
+    state.invalidate(); // Para frameloop demand
   });
   return <mesh ref={mesh} geometry={geometry} material={material} />;
 });

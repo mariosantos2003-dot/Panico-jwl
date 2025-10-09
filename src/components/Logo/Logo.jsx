@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Dither from "../React-Bits/Dither/Dither";
+import { isMobileDevice, debounce } from "../../utils/deviceDetection";
+import LightRays from "../React-Bits/LightRays/LightRays";
 
 export default function Logo() {
   // Estados para responsive
@@ -8,88 +10,92 @@ export default function Logo() {
     height: typeof window !== 'undefined' ? window.innerHeight : 1080
   });
 
-  // Detectar tipo de dispositivo
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    typeof navigator !== 'undefined' ? navigator.userAgent : ''
-  );
-  const isSmallMobile = dimensions.width <= 480;
+  // Detectar tipo de dispositivo - memoizado para evitar recalcular
+  const deviceInfo = useMemo(() => {
+    const isMobile = isMobileDevice();
+    const isSmallMobile = dimensions.width <= 480;
+    return { isMobile, isSmallMobile };
+  }, [dimensions.width]);
 
-  // Configuraciones responsive simplificadas
-  const getResponsiveConfig = () => {
+  const { isMobile, isSmallMobile } = deviceInfo;
+
+  // Configuraciones responsive simplificadas - memoizado
+  const config = useMemo(() => {
     if (isSmallMobile) {
       return {
-        ditherColors: 1,
+        ditherColors: 2, // Reducido de 1 a 2 para mejor calidad visual
         height: "80vh",
-        imageSize: "60%"
+        imageSize: "60%",
+        pixelSize: 4 // Reducir resolución en mobile pequeño
       };
     } else if (isMobile) {
       return {
-        ditherColors: 1,
+        ditherColors: 2,
         height: "90vh",
-        imageSize: "50%"
+        imageSize: "50%",
+        pixelSize: 3
       };
     } else {
       return {
         ditherColors: 8,
         height: "100vh",
-        imageSize: "50%"
+        imageSize: "50%",
+        pixelSize: 2
       };
     }
-  };
+  }, [isSmallMobile, isMobile]);
 
-  const config = getResponsiveConfig();
-
-  // Escuchar cambios de tamaño de ventana con debounce
+  // Escuchar cambios de tamaño de ventana con debounce optimizado
   useEffect(() => {
-    let timeoutId;
-    const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        setDimensions({
-          width: window.innerWidth,
-          height: window.innerHeight
-        });
-      }, 150);
-    };
+    const handleResize = debounce(() => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }, 200); // Aumentado a 200ms para mejor rendimiento
 
     window.addEventListener('resize', handleResize);
     return () => {
-      clearTimeout(timeoutId);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <div 
-      style={{ 
-        position: "relative", 
-        width: "100%", 
-        height: config.height, 
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: config.height,
         backgroundColor: "#000",
         overflow: "hidden"
       }}
     >
-      {/* Dither como fondo */}
+      {/* LightRays como fondo */}
       <div
         style={{
           position: "absolute",
           width: "100%",
           height: "100%",
+          top: 0,
+          left: 0,
           zIndex: 0,
         }}
       >
-        <Dither
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={isMobile}
-          enableMouseInteraction={!isMobile}
-          colorNum={config.ditherColors}
-          waveAmplitude={isSmallMobile ? 0.2 : 0.4}
-          waveFrequency={isSmallMobile ? 0.5 : 1}
-          waveSpeed={isSmallMobile ? 0.01 : 0.02}
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ff0000ff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
         />
       </div>
 
-      {/* Imagen encima del Dither */}
+      {/* Imagen encima del LightRays */}
       <div
         style={{
           position: "absolute",
@@ -104,10 +110,13 @@ export default function Logo() {
         <img
           src="/assets/Pánico_Full_Render_Display.webp"
           alt="Pánico Logo"
+          loading="eager"
+          decoding="async"
           style={{
             maxWidth: config.imageSize,
             maxHeight: config.imageSize,
             objectFit: "contain",
+            willChange: "auto" // Evitar compositing layers innecesarios
           }}
         />
       </div>
