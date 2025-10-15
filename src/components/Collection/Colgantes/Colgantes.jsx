@@ -4,7 +4,6 @@ import "./Colgantes.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import Beams from "../../React-Bits/Beams/Beams";
 
 gsap.registerPlugin(ScrollTrigger);
 

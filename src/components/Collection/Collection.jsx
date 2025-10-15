@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import BlurText from "../React-Bits/Blur-Text/Blur-Text";
-import Beams from "../React-Bits/Beams/Beams";
 
 
 gsap.registerPlugin(ScrollTrigger);
