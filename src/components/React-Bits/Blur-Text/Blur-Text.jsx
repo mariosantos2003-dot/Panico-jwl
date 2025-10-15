@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState, useMemo } from 'react';
+import { getOptimizedAnimationConfig } from '../../../utils/deviceDetection';
 
 const buildKeyframes = (from, steps) => {
   const keys = new Set([
@@ -31,6 +32,11 @@ const BlurText = ({
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
+  
+  // Usar configuración optimizada del dispositivo
+  const animConfig = useMemo(() => getOptimizedAnimationConfig(), []);
+  const optimizedDelay = delay * animConfig.delayMultiplier;
+  const optimizedStepDuration = stepDuration * animConfig.durationMultiplier;
 
   useEffect(() => {
     if (!ref.current) return;
@@ -51,28 +57,41 @@ const BlurText = ({
   const defaultFrom = useMemo(
     () =>
       direction === 'top'
-        ? { filter: 'blur(10px)', opacity: 0, y: -50 }
-        : { filter: 'blur(10px)', opacity: 0, y: 50 },
-    [direction]
+        ? { 
+            filter: `blur(${animConfig.maxBlur}px)`,
+            opacity: 0, 
+            y: animConfig.disableComplexAnimations ? -25 : -50
+          }
+        : { 
+            filter: `blur(${animConfig.maxBlur}px)`,
+            opacity: 0, 
+            y: animConfig.disableComplexAnimations ? 25 : 50
+          },
+    [direction, animConfig]
   );
 
   const defaultTo = useMemo(
-    () => [
-      {
-        filter: 'blur(5px)',
-        opacity: 0.5,
-        y: direction === 'top' ? 5 : -5,
-      },
-      { filter: 'blur(0px)', opacity: 1, y: 0 },
-    ],
-    [direction]
+    () => animConfig.simplifyAnimations 
+      ? [
+          // Simplificar animación en dispositivos de baja potencia
+          { filter: 'blur(0px)', opacity: 1, y: 0 },
+        ]
+      : [
+          {
+            filter: 'blur(5px)',
+            opacity: 0.5,
+            y: direction === 'top' ? 5 : -5,
+          },
+          { filter: 'blur(0px)', opacity: 1, y: 0 },
+        ],
+    [direction, animConfig]
   );
 
   const fromSnapshot = animationFrom ?? defaultFrom;
   const toSnapshots = animationTo ?? defaultTo;
 
   const stepCount = toSnapshots.length + 1;
-  const totalDuration = stepDuration * (stepCount - 1);
+  const totalDuration = optimizedStepDuration * (stepCount - 1);
   const times = Array.from({ length: stepCount }, (_, i) =>
     stepCount === 1 ? 0 : i / (stepCount - 1)
   );
@@ -89,13 +108,14 @@ const BlurText = ({
         const spanTransition = {
           duration: totalDuration,
           times,
-          delay: (index * delay) / 1000,
+          delay: (index * optimizedDelay) / 1000,
         };
         (spanTransition).ease = easing;
 
         return (
           <motion.span
-            className="inline-block will-change-[transform,filter,opacity]"
+            className="inline-block"
+            style={{ willChange: inView ? 'transform, filter, opacity' : 'auto' }}
             key={index}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}

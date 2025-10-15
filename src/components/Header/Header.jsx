@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 
-function Header() {
+export default function Header() {
   return (
     <div className='header'>
       <div className='header-content'>
@@ -29,7 +29,7 @@ function Header() {
 
         <div className='logo-section'>
           <Link to='/'>
-            <img src='/assets/rotating2.webp' alt='Rotating Logo' className='logo' />
+            <img src='/assets/spinning-icon.gif' alt='Rotating Logo' className='logo' />
           </Link>
         </div>
 
@@ -41,5 +41,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header

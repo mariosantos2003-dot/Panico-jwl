@@ -123,19 +123,19 @@ function Custom() {
     e.preventDefault();
     
     // Crear el mensaje para WhatsApp
-    const message = `🌟SOLICITUD DE JOYA PERSONALIZADA🌟
+    const message = `SOLICITUD DE JOYA PERSONALIZADA
 
 📝 Detalles de la joya:
 
-💎 Nombre: ${formData.nombre}
-📋 Descripción: ${formData.descripcion}
-🏷️ Categoría: ${formData.categoria}
-📏 Talla: ${formData.talla}
-⚡ Material: ${formData.material}
-💰 Precio estimado: ${formData.precio}€
-💬 Observaciones adicionales: ${formData.observaciones}
+ Nombre: ${formData.nombre}
+ Descripción: ${formData.descripcion}
+ Categoría: ${formData.categoria}
+ Talla: ${formData.talla}
+ Material: ${formData.material}
+ Precio estimado: ${formData.precio}€
+ Observaciones adicionales: ${formData.observaciones}
 
-¡Espero tu respuesta para comenzar a crear esta pieza única! ✨`;
+`;
 
     // Número de WhatsApp (reemplaza con el número real)
     const phoneNumber = "34633130711"; // 
@@ -233,16 +233,16 @@ function Custom() {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="material">Material preferido *</label>
-                <select
+                <input
+                  type="text"
                   id="material"
                   name="material"
                   value={formData.material}
                   onChange={handleInputChange}
+                  placeholder="Ej: Diamantes, Oro, Plata..."
                   required
-                >
-                  <option value="">Selecciona material</option>
-                 
-                </select>
+             
+                />
               </div>
 
               <div className="form-group">
