@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import Header from "./components/Header/Header";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
+import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Footer from "./components/Footer/Footer";
@@ -34,7 +35,8 @@ const LoadingFallback = () => (
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true }}>
+      <ScrollToTop />
       <Header />
 
       <Suspense fallback={<LoadingFallback />}>

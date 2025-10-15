@@ -1,6 +1,5 @@
 import React from "react";
 import "./Contact.css";
-import Beams from "../React-Bits/Beams/Beams";
 
 function Contact() {
   return (

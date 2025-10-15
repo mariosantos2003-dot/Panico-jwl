@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
-import Beams from "../React-Bits/Beams/Beams";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

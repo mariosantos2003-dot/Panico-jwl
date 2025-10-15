@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from "react";
-import Dither from "../React-Bits/Dither/Dither";
 import { isMobileDevice, debounce } from "../../utils/deviceDetection";
 import LightRays from "../React-Bits/LightRays/LightRays";
 
