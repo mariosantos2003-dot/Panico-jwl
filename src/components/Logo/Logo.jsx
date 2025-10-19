@@ -90,7 +90,7 @@ export default function Logo() {
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
-          className="custom-rays"
+          
         />
       </div>
 
