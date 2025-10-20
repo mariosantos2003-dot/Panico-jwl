@@ -17,11 +17,12 @@ export default function Header() {
           </div>
 
           <div className='nav-item'>
-            <Link to="/collection" className='nav-link'>Colección</Link>
+            <Link to="/collection" className='nav-link'>Piezas</Link>
             <div className='dropdown horizontal'>
               <Link to="/collection/anillos" className='dropdown-link'>Anillos</Link>
               <Link to="/collection/colgantes" className='dropdown-link'>Colgantes</Link>
               <Link to="/collection/pendientes" className='dropdown-link'>Pendientes</Link>
+              <Link to="/collection/colecciones" className='dropdown-link'>Colecciones</Link>
             </div>
           </div>
 

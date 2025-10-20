@@ -20,7 +20,7 @@
 .collection-list {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 2fr);
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
@@ -195,7 +195,7 @@
 /* Tablets grandes y pantallas medianas (hasta 1024px) */
 @media (max-width: 1024px) {
   .collection-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr);
     margin-top: 150px;
     margin-bottom: 300px;
     gap: 1.5rem;
@@ -228,15 +228,15 @@
 /* Tablets y pantallas pequeñas (hasta 768px) */
 @media (max-width: 768px) {
   .collection-container {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .collection-list {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     margin-top: 100px;
     margin-bottom: 200px;
-    gap: 1.5rem;
-    padding: 1rem;
+    gap: 1rem;
+    padding: 0.75rem;
   }
 
   .collection-item {
@@ -267,14 +267,13 @@
 
   .image-container {
     width: 100%;
-    max-width: 280px;
-    padding-bottom: 0;
-    height: 280px;
+    padding-bottom: 100%;
+    height: auto;
     margin: 0 auto;
   }
 
   .collection-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .collection-display {
@@ -290,15 +289,6 @@
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
   }
-
-  .collection-list {
-    gap: 1.5rem;
-    grid-template-columns: 1fr !important;
-  }
-
-  .collection-name {
-    font-size: 1rem;
-  }
 }
 
 /* Móviles grandes (hasta 480px) */
@@ -308,11 +298,11 @@
   }
 
   .collection-list {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     margin-top: 80px;
     margin-bottom: 150px;
-    gap: 1rem;
-    padding: 0.8rem;
+    gap: 0.75rem;
+    padding: 0.5rem;
   }
 
   .collection-item {
@@ -342,14 +332,13 @@
 
   .image-container {
     width: 100%;
-    max-width: 250px;
-    padding-bottom: 0;
-    height: 250px;
+    padding-bottom: 100%;
+    height: auto;
     margin: 0 auto;
   }
 
   .collection-name {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .collection-filter {
@@ -366,20 +355,16 @@
     flex: 1;
     min-width: 80px;
   }
-
-  .collection-list {
-    gap: 1rem;
-  }
 }
 
 /* Móviles pequeños (hasta 320px) */
 @media (max-width: 320px) {
   .collection-list {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     margin-top: 60px;
     margin-bottom: 100px;
-    gap: 1rem;
-    padding: 0.5rem;
+    gap: 0.5rem;
+    padding: 0.25rem;
   }
 
   .collection-item {
@@ -407,14 +392,13 @@
 
   .image-container {
     width: 100%;
-    max-width: 200px;
-    padding-bottom: 0;
-    height: 200px;
+    padding-bottom: 100%;
+    height: auto;
     margin: 0 auto;
   }
 
   .collection-name {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 

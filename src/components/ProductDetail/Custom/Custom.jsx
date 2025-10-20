@@ -6,19 +6,16 @@ import "./Custom.css";
 function Custom() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    nombre: '',
     descripcion: '',
-    categoria: '',
     talla: '',
     material: '',
     precio: '',
-    observaciones: ''
   });
 
   useEffect(() => {
     if (!showForm) {
       // Animación de entrada para el contenedor
-      gsap.fromTo(".custom-content", 
+      gsap.fromTo(".custom-content",
         {
           opacity: 0,
           scale: 0.8,
@@ -109,31 +106,25 @@ function Custom() {
   const handleBackToInfo = () => {
     setShowForm(false);
     setFormData({
-      nombre: '',
       descripcion: '',
-      categoria: '',
       talla: '',
       material: '',
       precio: '',
-      observaciones: ''
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Crear el mensaje para WhatsApp
     const message = `SOLICITUD DE JOYA PERSONALIZADA
 
-📝 Detalles de la joya:
 
- Nombre: ${formData.nombre}
  Descripción: ${formData.descripcion}
- Categoría: ${formData.categoria}
  Talla: ${formData.talla}
  Material: ${formData.material}
  Precio estimado: ${formData.precio}€
- Observaciones adicionales: ${formData.observaciones}
+
 
 `;
 
@@ -141,10 +132,10 @@ function Custom() {
     const phoneNumber = "34633130711"; // 
     // Codificar el mensaje para URL
     const encodedMessage = encodeURIComponent(message);
-    
+
     // Crear la URL de WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
+
     // Abrir WhatsApp
     window.open(whatsappUrl, '_blank');
   };
@@ -156,35 +147,23 @@ function Custom() {
           <>
             <h1 className="custom-title">Joya Personalizada</h1>
             <p className="custom-description">
-              Crea una pieza única y especial diseñada exclusivamente para ti. 
-              Nuestro equipo de artesanos trabajará contigo para dar vida a tus ideas 
+              Crea una pieza única y especial diseñada exclusivamente para ti.
+              Nuestro equipo de artesanos trabajará contigo para dar vida a tus ideas
               y crear una joya que refleje tu personalidad y estilo único.
             </p>
             <p className="custom-description">
-              Desde anillos de compromiso únicos hasta colgantes con significado especial, 
-              cada pieza es cuidadosamente elaborada con los mejores materiales y 
+              Desde anillos de compromiso únicos hasta colgantes con significado especial,
+              cada pieza es cuidadosamente elaborada con los mejores materiales y
               la máxima atención al detalle.
             </p>
             <button className="custom-contact-btn" onClick={handleShowForm}>
-                Crear Joya
+              Crear Joya
             </button>
           </>
         ) : (
           <form className="custom-form" onSubmit={handleSubmit}>
             <h2 className="form-title">Diseña tu Joya Personalizada</h2>
-            
-            <div className="form-group">
-              <label htmlFor="nombre">Nombre de la joya *</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleInputChange}
-                required
-                placeholder="Ej: Anillo de compromiso único"
-              />
-            </div>
+
 
             <div className="form-group">
               <label htmlFor="descripcion">Descripción detallada *</label>
@@ -200,22 +179,6 @@ function Custom() {
             </div>
 
             <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="categoria">Categoría *</label>
-                <select
-                  id="categoria"
-                  name="categoria"
-                  value={formData.categoria}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="">Selecciona categoría</option>
-                  <option value="anillos">Anillos</option>
-                  <option value="colgantes">Colgantes</option>
-                  <option value="pendientes">Pendientes</option>
-                  <option value="otros">Otros</option>
-                </select>
-              </div>
 
               <div className="form-group">
                 <label htmlFor="talla">Talla (si aplica)</label>
@@ -241,7 +204,7 @@ function Custom() {
                   onChange={handleInputChange}
                   placeholder="Ej: Diamantes, Oro, Plata..."
                   required
-             
+
                 />
               </div>
 
@@ -259,17 +222,6 @@ function Custom() {
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="observaciones">Observaciones adicionales</label>
-              <textarea
-                id="observaciones"
-                name="observaciones"
-                value={formData.observaciones}
-                onChange={handleInputChange}
-                rows="3"
-                placeholder="Cualquier detalle adicional, fecha límite, inspiración..."
-              />
-            </div>
 
             <div className="form-buttons">
               <button type="button" className="btn-secondary" onClick={handleBackToInfo}>

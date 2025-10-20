@@ -31,9 +31,9 @@ function Collection() {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      // En móvil, forzar 1 columna
+      // En móvil, forzar 2 columnas
       if (mobile && columns > 2) {
-        setColumns(1);
+        setColumns(2);
       }
     };
 
@@ -89,8 +89,8 @@ function Collection() {
     <div className="collection-container">
       <div className="collection-content">
         <BlurText
-          text="Joyas"
-          delay={150}
+          text="Piezas"
+          delay={50}
           animateBy="words"
           direction="top"
           onAnimationComplete={handleAnimationComplete}
@@ -149,7 +149,7 @@ function Collection() {
 
         <ul 
           className="collection-list" 
-          style={{ gridTemplateColumns: `repeat(${getResponsiveColumns()}, 1fr)` }}
+          style={{ gridTemplateColumns: `repeat(${getResponsiveColumns()}, 2fr)` }}
         >
           {filteredProducts.map((product) => (
             <li key={product.id} className="collection-item">

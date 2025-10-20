@@ -17,6 +17,7 @@ const GuiaTallas = lazy(() => import("./components/Guia-Tallas/Guia-tallas"));
 const Anillos = lazy(() => import("./components/Collection/Anillos/Anillos"));
 const Colgantes = lazy(() => import("./components/Collection/Colgantes/Colgantes"));
 const Pendientes = lazy(() => import("./components/Collection/Pendientes/Pendientes"));
+const Colecciones = lazy(() => import("./components/Collection/Colecciones/Colecciones"));
 
 // Componente de carga simple
 const LoadingFallback = () => (
@@ -56,6 +57,7 @@ function App() {
           <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
           <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="/guia-tallas" element={<PageWrapper><GuiaTallas/></PageWrapper>} />
+          <Route path="/collection/colecciones" element={<PageWrapper><Colecciones/></PageWrapper>} />
         </Routes>
       </Suspense>
       
