@@ -15,7 +15,7 @@
 
 
 .about-title{
-    font-family: "magneto", sans-serif;
+    font-family: "steelfish", sans-serif;
     text-align: center;
     font-size: clamp(3rem, 8vw, 6rem); /* Responsive font size */
     margin-bottom: 1rem;
@@ -185,6 +185,6 @@ html {
     margin-bottom: 1rem;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-family: 'magneto', sans-serif;
+    font-family: 'steelfish', sans-serif;
     font-weight: bold;
 }

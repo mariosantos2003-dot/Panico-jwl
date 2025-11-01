@@ -33,11 +33,11 @@
   cursor: pointer;
   color: white;
   transition: color 0.3s ease;
-  font-family: "plank";
-  font-size: x-large;
+  font-family: "steelfish";
+  font-size: xxx-large;
   margin-top: 40px;
   margin-bottom: 20px;
-  text-decoration: none;
+  text-decoration:none;
   white-space: nowrap;
 }
 
@@ -76,6 +76,15 @@
 @font-face{
   font-family:  "magneto";
   src: url(../../assets/fonts/MAGNETOB.TTF);
+}
+
+@font-face{
+  font-family: "heroic";
+  src: url(../../assets/fonts/Heroic.ttf);
+}
+@font-face{
+  font-family: "steelfish";
+  src: url(../../assets/fonts/Steelfish.otf);
 }
 
 /* Media Queries para Responsive Design */
@@ -288,7 +297,7 @@
   white-space: nowrap;
   justify-content: center;
  text-align: center;
-  font-family: "plank";
+  font-family: "heroic";
   font-size: medium;
 }
 

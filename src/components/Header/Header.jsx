@@ -10,19 +10,19 @@ export default function Header() {
         <div className='nav-section'>
 
           <div className='nav-item'>
-            <Link to="/" className='nav-link'>Inicio</Link>
+            <Link to="/" className='nav-link'>INICIO</Link>
             <div className='dropdown'>
-              <Link to="/guia-tallas" className='dropdown-link'>Guia de tallas</Link>
+              <Link to="/guia-tallas" className='dropdown-link'>GUIA DE TALLAS</Link>
             </div>
           </div>
 
           <div className='nav-item'>
-            <Link to="/collection" className='nav-link'>Piezas</Link>
+            <Link to="/collection" className='nav-link'>PIEZAS</Link>
             <div className='dropdown horizontal'>
-              <Link to="/collection/anillos" className='dropdown-link'>Anillos</Link>
-              <Link to="/collection/colgantes" className='dropdown-link'>Colgantes</Link>
-              <Link to="/collection/pendientes" className='dropdown-link'>Pendientes</Link>
-              <Link to="/collection/colecciones" className='dropdown-link'>Colecciones</Link>
+              <Link to="/collection/anillos" className='dropdown-link'>ANILLOS</Link>
+              <Link to="/collection/colgantes" className='dropdown-link'>COLGANTES</Link>
+              <Link to="/collection/pendientes" className='dropdown-link'>PENDIENTES</Link>
+              <Link to="/collection/colecciones" className='dropdown-link'>COLECCIONES</Link>
             </div>
           </div>
 
@@ -35,8 +35,8 @@ export default function Header() {
         </div>
 
         <div className='nav-section'>
-          <Link to='/contact' className='nav-link'>Contacto</Link>
-          <Link to='/about' className='nav-link'>Sobre mí</Link>
+          <Link to='/contact' className='nav-link'>CONTACTO</Link>
+          <Link to='/about' className='nav-link'>SOBRE MÍ</Link>
         </div>
       </div>
     </div>

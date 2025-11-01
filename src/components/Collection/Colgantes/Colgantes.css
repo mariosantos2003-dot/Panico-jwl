@@ -14,7 +14,7 @@
 
 
 .colgantes-title {
-  font-family: "magneto", sans-serif;
+  font-family: "steelfish", sans-serif;
   text-align: center;
   font-size: clamp(3rem, 8vw, 6rem);
   margin-bottom: 1rem;
@@ -84,7 +84,7 @@
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
   color: white;
-  font-family: "magneto", sans-serif;
+  font-family: "steelfish", sans-serif;
 }
 
 .product-description {
