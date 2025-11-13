@@ -1,3 +1,35 @@
+
+
+@font-face {
+  font-family: "gothic";
+  src: url(../../assets/fonts/Gothic.otf);
+}
+
+@font-face {
+  font-family: "plank";
+  src: url(../../assets/fonts/PLANK___.TTF);
+}
+
+@font-face {
+  font-family: "yuruka";
+  src: url(../../assets/fonts/fot-yuruka-std.ttf);
+}
+
+@font-face {
+  font-family: "magneto";
+  src: url(../../assets/fonts/MAGNETOB.TTF);
+}
+
+@font-face {
+  font-family: "heroic";
+  src: url(../../assets/fonts/Heroic.ttf);
+}
+
+@font-face {
+  font-family: "steelfish";
+  src: url(../../assets/fonts/Steelfish.otf);
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -36,8 +68,8 @@
   font-family: "steelfish";
   font-size: xxx-large;
   margin-top: 40px;
-  margin-bottom: 20px;
-  text-decoration:none;
+  margin-bottom: 30px;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -52,190 +84,13 @@
 
 .logo {
   width: 120px;
-  height: 120px;
+  height: 100px;
   object-fit: contain;
-  margin-top: 20px;
-  
+  margin-top: 10px;
+
 }
 
-@font-face {
-  font-family: "gothic";
-  src: url(../../assets/fonts/Gothic.otf);
-}
 
-@font-face {
-  font-family: "plank";
-  src: url(../../assets/fonts/PLANK___.TTF);
-}
-
-@font-face {
-  font-family: "yuruka";
-  src: url(../../assets/fonts/fot-yuruka-std.ttf);
-}
-
-@font-face{
-  font-family:  "magneto";
-  src: url(../../assets/fonts/MAGNETOB.TTF);
-}
-
-@font-face{
-  font-family: "heroic";
-  src: url(../../assets/fonts/Heroic.ttf);
-}
-@font-face{
-  font-family: "steelfish";
-  src: url(../../assets/fonts/Steelfish.otf);
-}
-
-/* Media Queries para Responsive Design */
-
-/* Tablets grandes y pantallas medianas (hasta 1024px) */
-@media (max-width: 1024px) {
-  .header {
-    height: 55px;
-    padding: 0 0.8rem;
-    margin-bottom: 15px;
-  }
-  
-  .header-content {
-    width: 85%;
-  }
-  
-  .nav-section {
-    gap: 3rem;
-  }
-  
-  .nav-link {
-    font-size: large;
-    margin-top: 35px;
-    margin-bottom: 18px;
-  }
-  
-  .logo {
-    width: 220px;
-    height: 220px;
-    margin-top: 50px;
-  }
-}
-
-/* Tablets y pantallas pequeñas (hasta 768px) */
-@media (max-width: 768px) {
-  .header {
-    height: 50px;
-    padding: 0 0.6rem;
-    margin-bottom: 10px;
-  }
-  
-  .header-content {
-    width: 95%;
-    /* Mantenemos flex-direction: row para una sola fila */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-section {
-    gap: 1.5rem;
-    /* Removemos order para mantener navegación a la derecha */
-  }
-  
-  .nav-link {
-    font-size: 0.9rem;
-    margin-top: 10px;
-    margin-bottom: 8px;
-  }
-  
-
-  .logo {
-    width: 140px;
-    height: 140px;
-    margin-top: 15px;
-  }
-}
-
-/* Móviles grandes (hasta 480px) */
-@media (max-width: 480px) {
-  .header {
-    height: 45px;
-    padding: 0 0.4rem;
-    margin-bottom: 8px;
-  }
-  
-  .header-content {
-    width: 98%;
-    justify-content: space-between;
-  }
-  
-  .nav-section {
-    gap: 1rem;
-  }
-  
-  .nav-link {
-    font-size: 0.8rem;
-    margin-top: 8px;
-    margin-bottom: 6px;
-  }
-  
-  .logo {
-    width: 120px;
-    height: 120px;
-    margin-top: 12px;
-  }
-}
-
-/* Móviles pequeños (hasta 320px) */
-@media (max-width: 320px) {
-  .header {
-    height: 40px;
-    padding: 0 0.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .header-content {
-    width: 99%;
-    justify-content: space-between;
-  }
-  
-  .nav-section {
-    gap: 0.6rem;
-    /* Removemos flex-wrap para mantener todo en una fila */
-  }
-  
-  .nav-link {
-    font-size: 0.65rem;
-    margin-top: 6px;
-    margin-bottom: 4px;
-  }
-  
-  .logo {
-    width: 100px;
-    height: 100px;
-    margin-top: 8px;
-  }
-}
-
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 280px) {
-  .header {
-    padding: 0 0.1rem;
-  }
-  
-  .nav-section {
-    gap: 0.4rem;
-  }
-  
-  .nav-link {
-    font-size: 0.6rem;
-    margin-top: 4px;
-    margin-bottom: 3px;
-  }
-  
-  .logo {
-    width: 90px;
-    height: 90px;
-    margin-top: 6px;
-  }
-}
 
 /* Hacer los dropdowns visibles solo en hover */
 .nav-item {
@@ -268,7 +123,6 @@
 /* Dropdown horizontal para Colección */
 .dropdown.horizontal {
   display: flex;
-  gap: 1rem;
   padding: 0.75rem 1rem;
   min-width: 300px;
   left: 50%;
@@ -283,7 +137,7 @@
 /* Separadores para el dropdown horizontal */
 .dropdown.horizontal .dropdown-link:not(:last-child)::after {
   content: '|';
-  margin-left: 1rem;
+  margin-left: 2rem;
   color: #ccc;
 }
 
@@ -296,9 +150,9 @@
   transition: background-color 0.2s ease;
   white-space: nowrap;
   justify-content: center;
- text-align: center;
-  font-family: "heroic";
-  font-size: medium;
+  text-align: center;
+  font-family: "steelfish";
+  font-size: x-large;
 }
 
 .dropdown-link:hover {
@@ -309,4 +163,225 @@
 .dropdown.horizontal .dropdown-link:hover {
   background-color: transparent;
   color: #73787d;
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablets grandes y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    height: 55px;
+    padding: 0 0.8rem;
+    margin-bottom: 15px;
+  }
+
+  .header-content {
+    width: 85%;
+  }
+
+  .nav-section {
+    gap: 3rem;
+  }
+
+  .nav-link {
+    font-size: large;
+    margin-top: 35px;
+    margin-bottom: 18px;
+  }
+
+  .logo {
+    width: 120x;
+    height: 120px;
+    margin-top: 50px;
+  }
+  .dropdown-link{
+    gap: 0rem;
+    font-size: x-small;
+  }
+/* Separadores para el dropdown horizontal */
+.dropdown.horizontal .dropdown-link:not(:last-child)::after {
+  content: '';
+  margin-left: 0.1rem;
+  color: #ccc;
+}
+}
+
+/* Tablets y pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 50px;
+    padding: 0 0.6rem;
+    margin-bottom: 10px;
+  }
+
+  .header-content {
+    width: 95%;
+    /* Mantenemos flex-direction: row para una sola fila */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-section {
+    gap: 1.5rem;
+    /* Removemos order para mantener navegación a la derecha */
+  }
+
+  .nav-link {
+    font-size: x-large;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+
+  .dropdown {
+    min-width: 120px;
+    left: auto;
+    right: -20px;
+    transform: translateY(-10px);
+  }
+
+  .nav-item:hover .dropdown {
+    transform: translateY(0);
+  }
+
+  .dropdown.horizontal {
+    min-width: auto;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    left: auto;
+    right: -20px;
+    transform: translateY(-10px);
+  }
+
+  .nav-item:hover .dropdown.horizontal {
+    transform: translateY(0);
+  }
+
+  .dropdown.horizontal .dropdown-link:not(:last-child)::after {
+    content: '';
+    margin-left: 0;
+  }
+
+  .dropdown-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    white-space: normal;
+  }
+
+  .logo {
+    width: 120x;
+    height: 120px;
+    margin-top: 15px;
+  }
+}
+
+/* Móviles grandes (hasta 480px) */
+@media (max-width: 480px) {
+  .header {
+    height: 45px;
+    padding: 0 0.4rem;
+    margin-bottom: 8px;
+  }
+
+  .header-content {
+    width: 98%;
+    justify-content: space-between;
+  }
+
+  .nav-section {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: x-large;
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+
+  .dropdown {
+    right: -10px;
+    min-width: 100px;
+  }
+
+  .dropdown.horizontal {
+    right: -10px;
+  }
+
+  .dropdown-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 80px;
+  }
+}
+
+/* Móviles pequeños (hasta 320px) */
+@media (max-width: 320px) {
+  .header {
+    height: 40px;
+    padding: 0 0.2rem;
+    margin-bottom: 5px;
+  }
+
+  .header-content {
+    width: 99%;
+    justify-content: space-between;
+  }
+
+  .nav-section {
+    gap: 0.6rem;
+    /* Removemos flex-wrap para mantener todo en una fila */
+  }
+
+  .nav-link {
+    font-size: x-large;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+
+  .dropdown {
+    right: -5px;
+    min-width: 90px;
+  }
+
+  .dropdown.horizontal {
+    right: -5px;
+  }
+
+  .dropdown-link {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo {
+    width: 20px;
+    height: 100px;
+    margin-top: 8px;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 280px) {
+  .header {
+    padding: 0 0.1rem;
+  }
+
+  .nav-section {
+    gap: 0.4rem;
+  }
+
+  .nav-link {
+    font-size: 0.6rem;
+    margin-top: 4px;
+    margin-bottom: 3px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 6px;
+  }
 }

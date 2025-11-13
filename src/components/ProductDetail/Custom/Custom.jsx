@@ -152,9 +152,7 @@ function Custom() {
               y crear una joya que refleje tu personalidad y estilo único.
             </p>
             <p className="custom-description">
-              Desde anillos de compromiso únicos hasta colgantes con significado especial,
-              cada pieza es cuidadosamente elaborada con los mejores materiales y
-              la máxima atención al detalle.
+              *También se pueden personalizar joyas de la colección.
             </p>
             <button className="custom-contact-btn" onClick={handleShowForm}>
               Crear Joya
@@ -178,6 +176,7 @@ function Custom() {
               />
             </div>
 
+
             <div className="form-row">
 
               <div className="form-group">
@@ -191,22 +190,9 @@ function Custom() {
                   placeholder="Ej: 16, M, L..."
                 />
               </div>
-            </div>
+            
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="material">Material preferido *</label>
-                <input
-                  type="text"
-                  id="material"
-                  name="material"
-                  value={formData.material}
-                  onChange={handleInputChange}
-                  placeholder="Ej: Diamantes, Oro, Plata..."
-                  required
-
-                />
-              </div>
+     
 
               <div className="form-group">
                 <label htmlFor="precio">Presupuesto estimado (€)</label>

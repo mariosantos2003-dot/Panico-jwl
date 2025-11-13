@@ -41,6 +41,7 @@ function About() {
     );
 
     // Animación de la primera sección
+    /*
     gsap.fromTo(firstSectionRef.current.querySelector('.first-image'),
       {
         opacity: 0,
@@ -79,7 +80,7 @@ function About() {
         }
       }
     );
-
+*/
     // Animación del carousel
     gsap.fromTo(carouselRef.current.querySelectorAll('.carousel-image'),
       {
@@ -233,7 +234,7 @@ function About() {
   return (
     <div className="about-container" ref={containerRef}>
       <div className="about-header" ref={headerRef}>
-        <h1 className="about-title">Sobre Mi</h1>
+        <h1 className="about-title">SOBRE MI</h1>
       </div>
 
       <div className="about-first-section" ref={firstSectionRef}>

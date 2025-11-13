@@ -28,7 +28,7 @@
 }
 
 .pendientes-title {
-  font-family: "magneto", sans-serif;
+  font-family: "steelfish", sans-serif;
   text-align: center;
   font-size: clamp(3rem, 8vw, 6rem);
   margin-bottom: 1rem;
@@ -55,7 +55,7 @@
 }
 
 .section-image {
-  width: 50%;
+  width: 100%;
   height: 70vh;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -69,7 +69,7 @@
 }
 
 .product-info-section {
-  width: 50%;
+  width: 100%;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -83,7 +83,7 @@
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
   color: white;
-  font-family: "magneto", sans-serif;
+  font-family: "steelfish", sans-serif;
 }
 
 .product-description {

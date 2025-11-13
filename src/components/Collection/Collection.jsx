@@ -89,7 +89,7 @@ function Collection() {
     <div className="collection-container">
       <div className="collection-content">
         <BlurText
-          text="Piezas"
+          text="PIEZAS"
           delay={50}
           animateBy="words"
           direction="top"

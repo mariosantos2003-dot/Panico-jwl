@@ -42,7 +42,7 @@ export default function Colgantes() {
     <div className="colgantes-container">
      
       <div className="colgantes-header">
-        <h1 className="colgantes-title">Colgantes</h1>
+        <h1 className="colgantes-title">COLGANTES</h1>
       </div>
 
       {colgantes.map((product, index) => {

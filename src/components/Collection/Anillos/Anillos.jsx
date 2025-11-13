@@ -39,7 +39,7 @@ export default function Anillos() {
   return (
     <div className="anillos-container">
       <div className="anillos-header">
-        <h1 className="anillos-title">Anillos</h1>
+        <h1 className="anillos-title">ANILLOS</h1>
       </div>
 
       {anillos.map((product, index) => {

@@ -14,7 +14,7 @@
 
 
 .colgantes-title {
-  font-family: "steelfish", sans-serif;
+  font-family: "steelfish";
   text-align: center;
   font-size: clamp(3rem, 8vw, 6rem);
   margin-bottom: 1rem;

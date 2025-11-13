@@ -41,7 +41,7 @@ export default function Pendientes() {
   return (
     <div className="pendientes-container">
       <div className="pendientes-header">
-        <h1 className="pendientes-title">Pendientes</h1>
+        <h1 className="pendientes-title">PENDIENTES</h1>
       </div>
 
       {pendientes.map((product, index) => {

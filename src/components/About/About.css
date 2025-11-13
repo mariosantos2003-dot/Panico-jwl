@@ -41,7 +41,7 @@
 }
 
 .about-first-section{
-    margin-top: clamp(200px, 30vw, 470px);
+    margin-top: clamp(50px, 30vw, 470px);
     display: flex;
     gap: 3rem;
     align-items: center;
@@ -50,6 +50,7 @@
     animation: fadeInUp 0.8s ease forwards;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .first-image{
@@ -94,7 +95,6 @@
 .about-second-section, .about-third-section{
     display: flex;
     margin-top: clamp(100px, 15vw, 200px);
-    padding: 0 clamp(2rem, 8vw, 8rem);
     gap: 3rem;
     align-items: center;
     opacity: 0;
@@ -103,6 +103,7 @@
     animation-delay: 0.2s;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 /* Alternate layout for third section */
@@ -155,6 +156,7 @@
         flex-direction: column;
         gap: 2rem;
         text-align: center;
+        width: 100%;
     }
     
     .about-third-section {
