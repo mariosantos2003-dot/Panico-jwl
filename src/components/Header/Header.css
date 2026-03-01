@@ -278,33 +278,39 @@
 /* Móviles grandes (hasta 480px) */
 @media (max-width: 480px) {
   .header {
-    height: 45px;
+    height: 50px;
     padding: 0 0.4rem;
     margin-bottom: 8px;
   }
 
   .header-content {
-    width: 98%;
-    justify-content: space-between;
+    width: 95%;
+    justify-content: space-around;
+    flex-direction: row;
   }
 
   .nav-section {
-    gap: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    margin: 0 1rem;
   }
 
   .nav-link {
-    font-size: x-large;
+    font-size: 0.9rem;
     margin-top: 8px;
     margin-bottom: 6px;
+    white-space: nowrap;
   }
 
   .dropdown {
-    right: -10px;
-    min-width: 100px;
+    display: none;
   }
 
   .dropdown.horizontal {
-    right: -10px;
+    display: none;
   }
 
   .dropdown-link {
@@ -314,41 +320,48 @@
 
   .logo {
     width: 50px;
-    height: 80px;
+    height: 50px;
+    margin-top: 0;
+    flex-shrink: 0;
   }
 }
 
 /* Móviles pequeños (hasta 320px) */
 @media (max-width: 320px) {
   .header {
-    height: 40px;
+    height: 45px;
     padding: 0 0.2rem;
     margin-bottom: 5px;
   }
 
   .header-content {
-    width: 99%;
-    justify-content: space-between;
+    width: 90%;
+    justify-content: space-around;
+    flex-direction: row;
   }
 
   .nav-section {
     gap: 0.6rem;
-    /* Removemos flex-wrap para mantener todo en una fila */
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    margin: 0 0.8rem;
   }
 
   .nav-link {
-    font-size: x-large;
+    font-size: 0.75rem;
     margin-top: 6px;
     margin-bottom: 4px;
+    white-space: nowrap;
   }
 
   .dropdown {
-    right: -5px;
-    min-width: 90px;
+    display: none;
   }
 
   .dropdown.horizontal {
-    right: -5px;
+    display: none;
   }
 
   .dropdown-link {
@@ -357,9 +370,10 @@
   }
 
   .logo {
-    width: 20px;
-    height: 100px;
-    margin-top: 8px;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    flex-shrink: 0;
   }
 }
 

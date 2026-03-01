@@ -171,6 +171,11 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
+    justify-items: center;
+  }
+  
+  .footer-section {
+    text-align: center;
   }
   
   .footer-section:last-child {
@@ -184,6 +189,7 @@
   
   .footer-social {
     align-items: center;
+    justify-content: center;
     gap: 0.8rem;
   }
   
@@ -197,6 +203,13 @@
     height: 18px;
   }
   
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
   .footer-links li {
     margin-bottom: 0.6rem;
   }

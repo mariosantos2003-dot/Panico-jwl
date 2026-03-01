@@ -242,7 +242,7 @@ function About() {
         <div className="about-text-first-section">
           <h2 className="about-section-title">Inicios</h2>
           <p>
-            Joyero con taller en Barcelona. Trabajo con plata y esmalte al fuego, combinando técnicas tradicionales con nuevos enfoques. Utilizo sobretodo texturas orgánicas, evitando formas clásicas y rectas. Aunque el esmalte es una técnica añeja, busco darle un lenguaje moderno, creando piezas únicas adaptadas al ahora.
+            <strong>Joyero con taller en Barcelona.</strong> Trabajo con plata y esmalte al fuego, combinando técnicas tradicionales con nuevos enfoques. Utilizo sobretodo texturas orgánicas, evitando formas clásicas y rectas. Aunque el esmalte es una técnica añeja, busco darle un lenguaje moderno, creando piezas únicas adaptadas al ahora.
           </p>
         </div>
       </div>
@@ -258,7 +258,7 @@ function About() {
         <div className="about-text-second-section">
           <h2 className="about-section-title">Esmalte Al Fuego</h2>
           <p>
-            El esmalte al fuego es una técnica milenaria que consiste en aplicar una capa de vidrio en polvo (esmalte vítreo) sobre una superficie metálica, generalmente cobre, plata u oro, para luego fundirlas a alta temperatura (750C°-900C°) en un horno/ mufla para esmaltes.
+            <strong>El esmalte al fuego es una técnica milenaria</strong> que consiste en aplicar una capa de vidrio en polvo (esmalte vítreo) sobre una superficie metálica, generalmente cobre, plata u oro, para luego fundirlas a alta temperatura (750°C - 900°C) en un horno/mufla para esmaltes.
           </p>
         </div>
       </div>
@@ -268,11 +268,11 @@ function About() {
         <div className="about-text-third-section">
           <h2 className="about-section-title">¿En qué consiste el proceso?</h2>
           <p>
-            Preparación: Se limpia y acondiciona la superficie metálica para asegurar una buena adherencia del esmalte.
-
-            Aplicación: El esmalte en polvo se aplica sobre la pieza mediante el tamizado o el pincelado.
-
-            Cocción: La pieza se hornea a temperaturas que oscilan entre 750 °C y 900 °C. En este punto, el esmalte se vitrifica y se adhiere al metal.
+            <strong>Preparación:</strong> Se limpia y acondiciona la superficie metálica para asegurar una buena adherencia del esmalte.
+            <br /><br />
+            <strong>Aplicación:</strong> El esmalte en polvo se aplica sobre la pieza mediante el tamizado o el pincelado.
+            <br /><br />
+            <strong>Cocción:</strong> La pieza se hornea a temperaturas que oscilan entre 750°C y 900°C. En este punto, el esmalte se vitrifica y se adhiere al metal.
           </p>
         </div>
       </div>
@@ -282,7 +282,7 @@ function About() {
         <div className="about-text-third-section">
           <h2 className="about-section-title">¿Qué son los Colores Vitrificables?</h2>
           <p>
-            Los colores vitrificables son pigmentos en polvo muy fino que contienen vidrio molido y óxidos metálicos. Al cocerse, se funden ligeramente con la base esmaltada, creando detalles finos y coloridos. Son idóneos para crear dibujos sobre el esmalte.
+            <strong>Los colores vitrificables</strong> son pigmentos en polvo muy fino que contienen vidrio molido y óxidos metálicos. Al cocerse, se funden ligeramente con la base esmaltada, creando detalles finos y coloridos. Son idóneos para crear dibujos sobre el esmalte.
           </p>
         </div>
       </div>

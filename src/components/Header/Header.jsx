@@ -20,7 +20,6 @@ export default function Header() {
             <Link to="/collection" className='nav-link'>PIEZAS</Link>
             <div className='dropdown horizontal'>
               <Link to="/collection/anillos" className='dropdown-link'>ANILLOS</Link>
-              <Link to="/collection/colgantes" className='dropdown-link'>COLGANTES</Link>
               <Link to="/collection/pendientes" className='dropdown-link'>PENDIENTES</Link>
               <Link to="/collection/colecciones" className='dropdown-link'>COLECCIONES</Link>
               <Link to="/custom" className='dropdown-link'>CUSTOM</Link>

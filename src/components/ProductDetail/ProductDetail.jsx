@@ -8,9 +8,9 @@ function ProductDetail() {
   const product = products.find((p) => p.id.toString() === id);
 
   const username = "panico.jwl"
-  const phoneNumber = "34633130711"; // Reemplaza con tu número de WhatsApp (con código de país sin +)
-  const message = `Hola buenas, me interesaría esta joya: ${product?.nombre || 'este producto' || product?.img}`
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const email = "panico.jewel@gmail.com";
+  const message = `Hola buenas, me interesaría esta joya: ${product?.nombre || 'este producto'}`
+  const emailLink = `mailto:${email}?subject=Información sobre ${product?.nombre || 'una pieza'}&body=${encodeURIComponent(message)}`;
   
   // Diferentes opciones de Instagram
   const igDirectLink = `https://ig.me/m/${username}`;
@@ -60,8 +60,8 @@ function ProductDetail() {
             <h3>¿Te interesa esta pieza?</h3>
             <p>Contáctanos para más información o para realizar tu pedido</p>
             <div className="contact-buttons">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="contact-button whatsapp">
-                💬 Contactar por WhatsApp
+              <a href={emailLink} className="contact-button email">
+                ✉️ Contactar por Email
               </a>
             </div>
           </div>

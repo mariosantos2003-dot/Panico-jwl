@@ -150,30 +150,62 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+        padding-left: clamp(1rem, 4vw, 2rem);
+        padding-right: clamp(1rem, 4vw, 2rem);
+    }
+
+    .about-header {
+        padding: 2rem 1rem;
+        height: auto;
+    }
+
+    .about-title {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin-bottom: 1rem;
+    }
+
     .about-first-section, 
     .about-second-section, 
     .about-third-section {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
         width: 100%;
+        margin-top: clamp(20px, 10vw, 50px);
     }
     
     .about-third-section {
-        flex-direction: column; /* Override row-reverse on mobile */
+        flex-direction: column;
     }
     
     .first-image, 
     .second-image, 
-    .third-image,
+    .third-image {
+        display: none;
+    }
+
+    .about-image-carousel {
+        display: none;
+    }
+
     .about-text-first-section,
     .about-text-second-section,
     .about-text-third-section {
         width: 100%;
+        padding: 1rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        line-height: 1.5;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        margin-top: 0;
     }
-    
-    .first-image {
-        height: 50vh;
+
+    .about-section-title {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        margin-bottom: 0.5rem;
     }
 }
 

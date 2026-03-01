@@ -133,13 +133,6 @@ function Collection() {
           </button>
           <p>|</p>
           <button 
-            className={selectedCategory === 'colgantes' ? 'active' : ''}
-            onClick={() => handleCategoryFilter('colgantes')}
-          >
-            Colgantes
-          </button>
-          <p>|</p>
-          <button 
             className={selectedCategory === 'pendientes' ? 'active' : ''}
             onClick={() => handleCategoryFilter('pendientes')}
           >

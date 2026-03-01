@@ -15,7 +15,7 @@ const ProductDetail = lazy(() => import("./components/ProductDetail/ProductDetai
 const Custom = lazy(() => import("./components/ProductDetail/Custom/Custom"));
 const GuiaTallas = lazy(() => import("./components/Guia-Tallas/Guia-tallas"));
 const Anillos = lazy(() => import("./components/Collection/Anillos/Anillos"));
-const Colgantes = lazy(() => import("./components/Collection/Colgantes/Colgantes"));
+// const Colgantes = lazy(() => import("./components/Collection/Colgantes/Colgantes"));
 const Pendientes = lazy(() => import("./components/Collection/Pendientes/Pendientes"));
 const Colecciones = lazy(() => import("./components/Collection/Colecciones/Colecciones"));
 
@@ -52,7 +52,6 @@ function App() {
           <Route path="/collection/:id" element={<PageWrapper><ProductDetail /></PageWrapper>} />
           <Route path="/custom" element={<PageWrapper><Custom /></PageWrapper>} />
           <Route path="/collection/anillos" element={<PageWrapper><Anillos/></PageWrapper>} />
-          <Route path="/collection/colgantes" element={<PageWrapper><Colgantes/></PageWrapper>} />
           <Route path="/collection/pendientes" element={<PageWrapper><Pendientes/></PageWrapper>} />
           <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
           <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
